@@ -28,7 +28,7 @@ public class logueoDefinition {
 
     @Entonces("^valido inicio de sesion$")
     public void valido_inicio_de_sesion() throws Exception {
-
+        // aqui debo crear el metodo para validar
     }
 
 }
