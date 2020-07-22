@@ -5,6 +5,8 @@
 
     Escenario: Logueo exitoso
       Dado Estoy en pagina de logueo adminfo
-      Cuando digito usuario "robot64" y clave "987654384"
+      Cuando digito usuario "dfdiaz" y clave "Dfd14z1027.*"
       Y presiono el boton de logueo
       Entonces valido inicio de sesion
+      Cuando ingresa al modulo de informes con grupo "11"
+      Y me dirijo al informe con nomprograma: "informesprejuridicos"

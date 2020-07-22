@@ -1,6 +1,7 @@
 package steps;
 
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
 import pageObjects.logueoPageObject;
 
@@ -20,6 +21,18 @@ public class logueoSteps {
     @Step
     public void clicBotonEntrar(){
         paginaLogeo.darClicBotonEntrar();
+    }
+
+    @StepGroup
+    public void iraIfnormes(String grupo){
+        paginaLogeo.darClicBotonGestion();
+        paginaLogeo.buscarPerfil(grupo);
+       // System.out.println(paginaLogeo.getTitle());
+
+    }
+    @Step
+    public void iraInforme(String nomprograma){
+        paginaLogeo.openAt(paginaLogeo.ruta+"?rtr=informes&ctr=InformesControlador&acc=&nom_programa="+nomprograma+"");
     }
 
 }

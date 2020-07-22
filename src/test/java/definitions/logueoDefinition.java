@@ -21,6 +21,12 @@ public class logueoDefinition {
         pasos.loguear(nombreUsuario,clave);
     }
 
+    @Cuando("^ingresa al modulo de informes con grupo \"([^\"]*)\"$")
+    public void ingresa_al_modulo_de_informes_con_grupo(String grupo) throws Exception {
+        pasos.iraIfnormes(grupo);
+    }
+
+
     @Cuando("^presiono el boton de logueo$")
     public void presiono_el_boton_de_logueo() throws Exception {
         pasos.clicBotonEntrar();
@@ -29,6 +35,11 @@ public class logueoDefinition {
     @Entonces("^valido inicio de sesion$")
     public void valido_inicio_de_sesion() throws Exception {
         // aqui debo crear el metodo para validar
+    }
+
+    @Cuando("^me dirijo al informe con nomprograma: \"([^\"]*)\"$")
+    public void me_dirijo_al_informe_con_nomprograma(String nomprograma) throws Exception {
+        pasos.iraInforme(nomprograma);
     }
 
 }

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Pruebas a pantalla de logueo" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-08T16:33:56" hostname="DESKTOP-O1OBI75" time="13.801">
+<testsuite name="Pruebas a pantalla de logueo" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-21T15:39:03" hostname="WS-SOLATIMED14" time="45.088">
   <properties/>
-  <testcase name="Logueo exitoso" classname="Pruebas a pantalla de logueo" time="13.801"/>
+  <testcase name="Logueo exitoso" classname="Pruebas a pantalla de logueo" time="45.088"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 83.0.4103.14 (be04594a2b8411758b860104bc0a1033417178be-refs/branch-heads/4103@{#119}) on port 42524
+  <system-err><![CDATA[Starting ChromeDriver 83.0.4103.14 (be04594a2b8411758b860104bc0a1033417178be-refs/branch-heads/4103@{#119}) on port 44801
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-jul 08, 2020 11:34:01 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1595345947.880][WARNING]: This version of ChromeDriver has not been tested with Chrome version 84.
+jul 21, 2020 10:39:09 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFORMACIÓN: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
