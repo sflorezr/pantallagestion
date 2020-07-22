@@ -4,6 +4,7 @@ import net.thucydides.core.annotations.Step;
 import net.thucydides.core.annotations.StepGroup;
 import net.thucydides.core.annotations.Steps;
 import pageObjects.logueoPageObject;
+import utilities.conection;
 
 public class logueoSteps {
     logueoPageObject paginaLogeo;
@@ -34,5 +35,8 @@ public class logueoSteps {
     public void iraInforme(String nomprograma){
         paginaLogeo.openAt(paginaLogeo.ruta+"?rtr=informes&ctr=InformesControlador&acc=&nom_programa="+nomprograma+"");
     }
-
+    @Step
+    public void consulta(String consulta){
+        //conection.ConsultaBase consulta=null;
+    }
 }
