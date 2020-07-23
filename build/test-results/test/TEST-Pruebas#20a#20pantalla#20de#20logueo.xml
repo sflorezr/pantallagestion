@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Pruebas a pantalla de logueo" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-21T15:39:03" hostname="WS-SOLATIMED14" time="45.088">
+<testsuite name="Pruebas a pantalla de logueo" tests="1" skipped="0" failures="1" errors="0" timestamp="2020-07-23T19:34:44" hostname="DESKTOP-O1OBI75" time="24.807">
   <properties/>
-  <testcase name="Logueo exitoso" classname="Pruebas a pantalla de logueo" time="45.088"/>
+  <testcase name="Logueo exitoso" classname="Pruebas a pantalla de logueo" time="24.807">
+    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
+	at steps.logueoSteps.consulta(logueoSteps.java:47)
+	at steps.logueoSteps$$EnhancerByCGLIB$$19d3903b.CGLIB$consulta$0(&lt;generated&gt;)
+	at steps.logueoSteps$$EnhancerByCGLIB$$19d3903b$$FastClassByCGLIB$$d6ca69fe.invoke(&lt;generated&gt;)
+	at net.sf.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:425)
+	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:410)
+	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:385)
+	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:133)
+	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:62)
+	at steps.logueoSteps$$EnhancerByCGLIB$$19d3903b.consulta(&lt;generated&gt;)
+	at definitions.logueoDefinition.estoy_en_pagina_de_logueo_adminfo(logueoDefinition.java:21)
+	at ✽.Estoy en pagina de logueo adminfo(src/test/resources/logueo.feature:7)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 83.0.4103.14 (be04594a2b8411758b860104bc0a1033417178be-refs/branch-heads/4103@{#119}) on port 44801
-Only local connections are allowed.
-Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
-ChromeDriver was started successfully.
-[1595345947.880][WARNING]: This version of ChromeDriver has not been tested with Chrome version 84.
-jul 21, 2020 10:39:09 AM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFORMACIÓN: Detected dialect: W3C
+  <system-err><![CDATA[log4j:WARN No appenders could be found for logger (utilities.conection).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
 ]]></system-err>
 </testsuite>

@@ -1,1 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Pruebas a pantalla de logueo" skipped="0" tests="1" time="45.6" timestamp="2020-07-21T10:39:02.690-05:00[America/Bogota]"><testcase name="Logueo exitoso"/></testsuite>
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Pruebas a pantalla de logueo" skipped="0" tests="1" time="25.2" timestamp="2020-07-23T14:34:43.896-05:00[America/Bogota]"><testcase name="Logueo exitoso"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+steps.logueoSteps.consulta(logueoSteps.java:47)&#13;
+definitions.logueoDefinition.estoy_en_pagina_de_logueo_adminfo(logueoDefinition.java:21)&#13;
+✽.Estoy en pagina de logueo adminfo(src/test/resources/logueo.feature:7)&#13;
+</system-err></testcase></testsuite>

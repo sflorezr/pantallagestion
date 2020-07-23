@@ -6,8 +6,13 @@ import net.thucydides.core.annotations.Steps;
 import pageObjects.logueoPageObject;
 import utilities.conection;
 
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class logueoSteps {
     logueoPageObject paginaLogeo;
+    private conection con = new conection();
 
     @Step
     public void abrirAdminfo(){
@@ -36,7 +41,12 @@ public class logueoSteps {
         paginaLogeo.openAt(paginaLogeo.ruta+"?rtr=informes&ctr=InformesControlador&acc=&nom_programa="+nomprograma+"");
     }
     @Step
-    public void consulta(String consulta){
-        //conection.ConsultaBase consulta=null;
+    public void consulta(String consulta) throws SQLException, IOException {
+        ResultSet rs= null;
+        rs=con.ConsultaBase(consulta);
+        while (rs.next()) {
+            System.out.println(rs.getString(1));
+        }
+
     }
 }

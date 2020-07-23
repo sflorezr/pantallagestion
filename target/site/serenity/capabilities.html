@@ -51,10 +51,10 @@
         var plot1 = $.jqplot('coverage_pie_chart', [
             [
                 ['Passing', 0],
-                ['Pending', 1],
+                ['Pending', 0],
                 ['Ignored', 0],
                 ['Failing', 0],
-                ['Errors',  0],
+                ['Errors',  1],
                 ['Compromised',  0],
                 ['Untested',  0],
             ]
@@ -84,10 +84,10 @@
             },
             series: [
                 {label: '0 requirements tested successfully'},
-                {label: '1 requirements pending'},
+                {label: '0 requirements pending'},
                 {label: '0} requirements skipped'},
                 {label: '0} requirements with failures'},
-                {label: '0} requirements with errors'},
+                {label: '1} requirements with errors'},
                 {label: '0} requirements compromised'},
                 {label: '0} requirements untested'},
             ]
@@ -146,7 +146,7 @@
     <div id="topbanner">
         <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
         <div id="projectname-banner" style="float:right">
-            <span class="projectname"></span>
+            <span class="projectname">Pantalla de gestion</span>
         </div>
     </div>
 </div>
@@ -175,7 +175,7 @@
             <a href="#"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 17-07-2020 15:14</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 23-07-2020 14:30</span>
     <br style="clear:left"/>
 </div>
 
@@ -209,8 +209,8 @@
                                     <td class="summary-leading-column"><a href="#test-results-table">Acceptance Criteria (tests)</a></td>
                                     <td>1</td>
                                     <td>0</td>
-                                    <td>0</td>
                                     <td>1</td>
+                                    <td>0</td>
                                     <td>0</td>
                                     <td></td>
                                 </tr>
@@ -240,8 +240,8 @@
             <td class="summary-leading-column">Automated</td>
             <td>1</td>
             <td>0 (0%)</td>
-            <td>0 (0%)</td>
             <td>1 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
@@ -256,13 +256,13 @@
             <td class="summary-leading-column">Total</td>
             <td>1</td>
             <td>0 (0%)</td>
-            <td>0 (0%)</td>
             <td>1 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">35 seconds</td>
+                <td colspan="5">46 seconds</td>
         </tr>
         </body>
     </table>
@@ -291,27 +291,27 @@
                         </thead>
                         <tbody>
 
-                            <tr class="test-PENDING">
-                                <td><span class="summary-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                            <tr class="test-ERROR">
+                                <td><span class="summary-icon"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></span>
                                     
-                                    <span style="display:none">PENDING</span></td>
-                                <td class="PENDING-text">
+                                    <span style="display:none">ERROR</span></td>
+                                <td class="ERROR-text">
                                     <div class="ellipsis">
 
                                         <a href="ed93ba919ec0008608bc40f4f7a60a64ac79d4df0d50a363fd4aef0d8d5a4fdc.html" class="ellipsis"
-                                           title="Logueo exitoso ">
+                                           title="Logueo exitoso Null pointer exception">
                                             Logueo exitoso
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
                                 </td>
 
-                                <td class="PENDING-text">10</td>
+                                <td class="ERROR-text">7</td>
 
 
-                                <td class="PENDING-text" data-sort="2020-07-17 15:14:02">15:14:02</td>
+                                <td class="ERROR-text" data-sort="2020-07-23 14:30:27">14:30:27</td>
 
-                                <td class="PENDING-text">35.26</td>
+                                <td class="ERROR-text">45.78</td>
                             </tr>
                         </tbody>
                     </table>

@@ -55,13 +55,13 @@
             [
                 ['Passing', 0],
                 
-                ['Pending', 1],
+                ['Pending', 0],
                 
                 ['Ignored/Skipped', 0],
                 
                 ['Failing', 0],
                 
-                ['Errors',  0],
+                ['Errors',  1],
                 ['Compromised',  0]
             ]
         ], {
@@ -93,10 +93,10 @@
             },
             series: [
                 {label: '0 / 1 tests passed' },
-                {label: '1 / 1 tests pending'},
+                {label: '0 / 1 tests pending'},
                 {label: '0 / 1 tests not executed'},
                 {label: '0 / 1 tests failed'},
-                {label: '0 / 1 errors'},
+                {label: '1 / 1 errors'},
                 {label: '0 / 1 compromised tests'}
             ]
         });
@@ -105,13 +105,13 @@
             [
                 ['Passing', 0],
                 
-                ['Pending', 1],
+                ['Pending', 0],
                 
                 ['Ignored', 0],
                 
                 ['Failing', 0],
                 
-                ['Errors', 0],
+                ['Errors', 1],
                 ['Compromised', 0],
             ]
         ], {
@@ -144,10 +144,10 @@
             },
             series: [
                 {label: '0 / 1 tests passed (0% of all test steps)' },
-                {label: '1 / 1 tests pending'},
+                {label: '0 / 1 tests pending'},
                 {label: '0 / 1 tests not executed'},
                 {label: '0 / 1 tests failed (0% of all test steps)'},
-                {label: '0 / 1 errors (0% of all test steps)'}
+                {label: '1 / 1 errors (1% of all test steps)'}
             ]
         });
 
@@ -183,7 +183,7 @@
     <div id="topbanner">
         <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
         <div id="projectname-banner" style="float:right">
-            <span class="projectname"></span>
+            <span class="projectname">Pantalla de gestion</span>
         </div>
     </div>
 </div>
@@ -210,7 +210,7 @@
             <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 17-07-2020 15:19</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 23-07-2020 14:32</span>
     <br style="clear:left"/>
 </div>
 <div class="clr"></div>
@@ -230,9 +230,19 @@
 
                     <span class="test-count"> |
                         1
-                            <a href="bde4fca42ca8baa0fe2eac76a241c84327dfe4ca903a1daa7cae83a1035d4745.html">pending</a>
+                            <a href="b964a040ccee2192880812cc5de2c4d0075e3288c1b298b7dda0839367bb26be.html">unsuccessful</a>
                         
+                    </span>(
+                    <span class="test-count">
+                        0
+                            <a href="da5b0c51b332adf0ef993a9f086d6a1b51a3d800248ec6ae281212092f35bd37.html">failed</a>
+                        ,
                     </span>
+                    <span class="test-count">
+                        1
+                            <a href="c8a926210aeff57f8aa7ea799262d4b730915a909cd5ecd6a705b1fa13bc7aa8.html">with errors</a>
+                        
+                    </span>)
 
                 
 
@@ -285,8 +295,8 @@
             <td class="summary-leading-column">Automated</td>
             <td>1</td>
             <td>0 (0%)</td>
-            <td>0 (0%)</td>
             <td>1 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
@@ -301,13 +311,13 @@
             <td class="summary-leading-column">Total</td>
             <td>1</td>
             <td>0 (0%)</td>
-            <td>0 (0%)</td>
             <td>1 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">35 seconds</td>
+                <td colspan="5">46 seconds</td>
         </tr>
         </body>
     </table>
@@ -330,7 +340,7 @@
                     <table>
                         <tr>
                             <td colspan="2">
-                                <span class="caption">Test results weighted by test size in steps (average steps per test: 10) .</span>
+                                <span class="caption">Test results weighted by test size in steps (average steps per test: 7) .</span>
                                 <span class="togglePieChart" id="toggleWeightedPieChart"><a href="#">Show/Hide Pie
                                     Chart</a></span>
                             </td>
@@ -364,8 +374,8 @@
             <td class="summary-leading-column">Automated</td>
             <td>1</td>
             <td>0 (0%)</td>
-            <td>0 (0%)</td>
             <td>1 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
@@ -380,13 +390,13 @@
             <td class="summary-leading-column">Total</td>
             <td>1</td>
             <td>0 (0%)</td>
-            <td>0 (0%)</td>
             <td>1 (100%)</td>
+            <td>0 (0%)</td>
             <td>0 (0%)</td>
         </tr>
         <tr>
             <td class="summary-leading-column">Total Duration</td>
-                <td colspan="5">35 seconds</td>
+                <td colspan="5">46 seconds</td>
         </tr>
         </body>
     </table>
@@ -430,27 +440,27 @@
                         </thead>
                         <tbody>
 
-                            <tr class="test-PENDING">
-                                <td><span class="summary-icon"><i class='fa fa-square-o pending-icon ' title='PENDING'></i></span>
+                            <tr class="test-ERROR">
+                                <td><span class="summary-icon"><i class='fa fa-exclamation-triangle error-icon ' title='ERROR'></i></span>
                                     
-                                    <span style="display:none">PENDING</span></td>
-                                <td class="PENDING-text">
+                                    <span style="display:none">ERROR</span></td>
+                                <td class="ERROR-text">
                                     <div class="ellipsis">
 
                                         <a href="ed93ba919ec0008608bc40f4f7a60a64ac79d4df0d50a363fd4aef0d8d5a4fdc.html" class="ellipsis"
-                                           title="Logueo exitoso ">
+                                           title="Logueo exitoso Null pointer exception">
                                             Logueo exitoso
                                                 <span class="related-issue-title"></span>
                                         </a>
                                     </div>
                                 </td>
 
-                                <td class="PENDING-text">10</td>
+                                <td class="ERROR-text">7</td>
 
 
-                                <td class="PENDING-text" data-sort="2020-07-17 15:14:02">15:14:02</td>
+                                <td class="ERROR-text" data-sort="2020-07-23 14:30:27">14:30:27</td>
 
-                                <td class="PENDING-text">35.26</td>
+                                <td class="ERROR-text">45.78</td>
                             </tr>
                         </tbody>
                     </table>

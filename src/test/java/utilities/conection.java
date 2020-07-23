@@ -2,7 +2,7 @@ package utilities;
 
 
 import org.apache.log4j.Logger;
-
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
@@ -10,9 +10,10 @@ import java.util.Properties;
 public class conection {
     private static final Logger LOGGER = Logger.getLogger(conection.class.getName());
 
-    public ResultSet ConsultaBase(String consulta){
-        InputStream input = getClass().getClassLoader().getResourceAsStream("src/test/java/resources/datos.properties");
+    public ResultSet ConsultaBase(String consulta) throws IOException {
+        InputStream input = getClass().getClassLoader().getResourceAsStream("datos.properties");
         Properties prop = new Properties();
+        prop.load(input);
         ResultSet rs=null;
         String ip=prop.getProperty("ip");
         String nombre=prop.getProperty("base");

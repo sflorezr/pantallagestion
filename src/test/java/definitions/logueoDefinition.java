@@ -6,12 +6,19 @@ import cucumber.api.java.es.Entonces;
 import net.thucydides.core.annotations.Steps;
 import steps.logueoSteps;
 
+import java.io.InputStream;
+import java.util.Properties;
+
 public class logueoDefinition {
     @Steps
     logueoSteps pasos;
 
     @Dado("^Estoy en pagina de logueo adminfo$")
     public void estoy_en_pagina_de_logueo_adminfo() throws Exception {
+        InputStream input = getClass().getClassLoader().getResourceAsStream("consultas.properties");
+        Properties prop = new Properties();
+        prop.load(input);
+        pasos.consulta(prop.getProperty("consultaInformes"));
         pasos.abrirAdminfo();
     }
 
