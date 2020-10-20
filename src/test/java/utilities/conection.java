@@ -28,8 +28,8 @@ public class conection {
             base = DriverManager.getConnection("jdbc:postgresql://"+ip+":"+puerto+"/"+nombre,usuario,pass);
             st = base.createStatement();
             rs = st.executeQuery(consulta);
-            st.close();
-            base.close();
+          //  st.close();
+          //  base.close();
         }catch (ClassNotFoundException | SQLException e){
             LOGGER.error(e.getMessage());
         }

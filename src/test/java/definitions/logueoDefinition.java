@@ -1,5 +1,6 @@
 package definitions;
 
+
 import cucumber.api.java.es.Cuando;
 import cucumber.api.java.es.Dado;
 import cucumber.api.java.es.Entonces;
@@ -15,10 +16,6 @@ public class logueoDefinition {
 
     @Dado("^Estoy en pagina de logueo adminfo$")
     public void estoy_en_pagina_de_logueo_adminfo() throws Exception {
-        InputStream input = getClass().getClassLoader().getResourceAsStream("consultas.properties");
-        Properties prop = new Properties();
-        prop.load(input);
-        pasos.consulta(prop.getProperty("consultaInformes"));
         pasos.abrirAdminfo();
     }
 
@@ -30,7 +27,7 @@ public class logueoDefinition {
 
     @Cuando("^ingresa al modulo de informes con grupo \"([^\"]*)\"$")
     public void ingresa_al_modulo_de_informes_con_grupo(String grupo) throws Exception {
-        pasos.iraIfnormes(grupo);
+        pasos.iraInformes(grupo);
     }
 
 
@@ -46,7 +43,12 @@ public class logueoDefinition {
 
     @Cuando("^me dirijo al informe con nomprograma: \"([^\"]*)\"$")
     public void me_dirijo_al_informe_con_nomprograma(String nomprograma) throws Exception {
-        pasos.iraInforme(nomprograma);
+      //  pasos.iraInforme(nomprograma);
+        InputStream input = getClass().getClassLoader().getResourceAsStream("consultas.properties");
+        Properties prop = new Properties();
+        prop.load(input);
+        pasos.consulta(prop.getProperty("consultaInformes"));
+
     }
 
 }

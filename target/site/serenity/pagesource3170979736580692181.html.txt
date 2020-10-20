@@ -1,0 +1,2905 @@
+<html><head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+        <title>SOFTWARE DE GESTION ADMINFO   --   SOLUCIONES LATINAS Ltda.</title>
+
+        <link href="https://alianzas.adminfoweb.net/vsmart/imagenes/icon.png?cache=1" rel="icon" type="image/png">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/usuarioempresa.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/themes/custom-theme/jquery-ui-1.8.10.custom.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/Gridtable.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/plantillaPrincipal.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/formulario/jquery.qtip.min.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/js/select2/select2.css" rel="stylesheet">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/general.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/menu.css" rel="stylesheet" type="text/css">
+        <link href="https://alianzas.adminfoweb.net/vsmart/js/cluetip/jquery.cluetip.css" rel="stylesheet" type="text/css">
+        <link rel="gettext" lang="es_CO" href="https://alianzas.adminfoweb.net/vsmart/locale/es_CO/LC_MESSAGES/messages.json">
+        <link href="https://alianzas.adminfoweb.net/vsmart/css/widgets.css" rel="stylesheet" type="text/css">
+
+        <script type="text/javascript">
+            var strDominio       = 'https://alianzas.adminfoweb.net/vsmart/';
+            var intAnchoPantalla = (window.innerWidth  || self.innerWidth)-90;
+            var intAltoPantalla  = (window.innerHeight || self.innerHeight)-90;
+        </script>
+
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/php.min.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/jquery.estable.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/gettextjs/gettext.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/jquery-ui-1.8.10.custom.min.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/jquery.layout.min.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/ajax.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/select2/select2.min.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/jquery.cluetip.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/noty.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/cluetip/jquery.cluetip.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/formulario/jquery.qtip.min.js"></script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/jquery.simplemodal.js"></script>
+        <script type="text/javascript"> $.gt.load('es_CO'); </script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/funciones.js"></script><script type="text/javascript">var Message = {
+    options: {
+        appendTo: "body",
+        autohide: 5,
+        interval: 500,
+        messageClass: "message",
+        messageClassActive: "message-active",
+        messageContainerClass: "messageContainer",
+        messageWrapperClass: "message-wrapper",
+        messageTextClass: "message-text",
+        messageTitleClass: "message-title"
+    },
+    queue: [],
+    container: null,
+    init: function (a) {
+        $.extend(this.options, a || {});
+        if (this.options.autohide) {
+            this.options.autohide *= 1000
+        }
+        $(this.options.appendTo).append($('<div id="__messageQueue__container"></div>').addClass(this.options.messageContainerClass));
+        this.container = $("div#__messageQueue__container");
+        if ("setInterval" in window) {
+            window.setInterval(function () {
+                Message.check()
+            }, this.options.interval)
+        } else {
+            window.setTimeout(function () {
+                Message.check(true)
+            }, this.options.interval)
+        }
+        $("div#__messageQueue__container *").live("selectstart", function () {
+            return false
+        });
+        $("div#__messageQueue__container *").live("mousedown", function () {
+            $(this).css("MozUserSelect", "none");
+            return false
+        })
+    },
+    check: function (d) {
+        var a = new Date().getTime();
+        for (var b = 0; b < this.queue.length; b++) {
+            var c = this.queue[b];
+            if (c.unread) {
+                c.unread = false;
+                this.show(c.unique)
+            } else {
+                if (!c.active && !c.sticky && this.options.autohide && ((!c.autohide && c.time < (a - this.options.autohide)) || (c.autohide && c.time < (a - c.autohide)))) {
+                    this.hide(c.unique)
+                }
+            }
+        }
+        if (d) {
+            window.setTimeout(function () {
+                Message.check(true)
+            }, this.options.interval)
+        }
+    },
+    add: function (d, c, b) {
+        if (!c) {
+            c = d.substr(0, 20);
+            if (d.length > 20) {
+                c += "..."
+            }
+        }
+        if (!b) {
+            b = {
+                style: "",
+                callback: false,
+                autohide: false
+            }
+        } else {
+            if (typeof b == "string") {
+                b = {
+                    style: b,
+                    callback: false,
+                    autohide: false
+                }
+            } else {
+                if (typeof b == "function") {
+                    b = {
+                        style: "",
+                        callback: b,
+                        sticky: true,
+                        autohide: false
+                    }
+                } else {
+                    if (typeof b == "number") {
+                        b = {
+                            style: "",
+                            callback: false,
+                            autohide: b
+                        }
+                    } else {
+                        if (typeof b == "object") {
+                            if (b.callback) {
+                                b.sticky = true
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        var a = new Date().getTime();
+        return this.queue.push($.extend(b, {
+            time: a,
+            unique: a + "_" + (Math.floor(Math.random() * 90000) + 10000),
+            text: d,
+            title: c,
+            unread: true,
+            active: false,
+            sticky: (b.sticky || b.style.match(/\bsticky\b/i) ? true : false)
+        }))
+    },
+    remove: function (b) {
+        for (var a = this.queue.length - 1; a >= 0; a--) {
+            if (this.queue[a].unique == b) {
+                this.queue.splice(a, 1)
+            }
+        }
+        return true
+    },
+    get: function (b) {
+        for (var a = this.queue.length - 1; a >= 0; a--) {
+            if (this.queue[a].unique == b) {
+                return this.queue[a]
+            }
+        }
+        return false
+    },
+    show: function (b) {
+        var a = this.get(b);
+        $(this.container).append($('<div id="__messageId_' + a.unique + '"></div>').addClass(this.options.messageClass).append($("<div></div>").addClass(this.options.messageWrapperClass).append($("<div></div>").addClass(a.style).append($("<h1></h1>").addClass(this.options.messageTitleClass).html(a.title)).append($("<p></p>").addClass(this.options.messageTextClass).html(a.text))).data("unique", a.unique).click(function () {
+            Message.hide($(this).data("unique"))
+        }).mouseenter(function () {
+            Message.active($(this).data("unique"))
+        }).mouseleave(function () {
+            Message.inactive($(this).data("unique"))
+        })).css({
+            opacity: 0
+        }).animate({
+            opacity: 1
+        }, 300));
+        $(this.container).hide();
+        $(this.container).slideToggle('slow');
+    },
+    hide: function (b) {
+        var a = this.get(b);
+        if (a.callback) {
+            a.callback()
+        }
+        this.remove(b);
+        $("div#__messageId_" + b).animate({
+            height: "0px",
+            opacity: "0",
+            "margin-bottom": "0px"
+        }, 300, "linear", function () {
+            $(this).remove()
+        })
+    },
+    active: function (b) {
+        var a = this.get(b);
+        $("div#__messageId_" + b).addClass(this.options.messageClassActive);
+        a.active = true
+    },
+    inactive: function (b) {
+        var a = this.get(b);
+        $("div#__messageId_" + b).removeClass(this.options.messageClassActive);
+        a.active = false
+    }
+};</script>
+        <script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/widgets.js'); </script><script type="text/javascript">
+function cargarWidget(vista, div, conteo, width = null) {
+	var url = "index.php?rtr=informes&ctr=WidgetsCtr&acc="+ vista +"&widget="+ div +"&conteo="+ conteo+"&ancho="+width;
+	$('#'+ div).load(url);
+}
+
+function bloquearDiv(div) {
+    $('#' + div).block({
+        message: '<h3>Cargando Información</h3>',
+        css: {
+            border: 'none',
+            padding: '15px',
+            backgroundColor: '#edecec',
+            color: '#42474a',
+        }
+    });
+}
+
+function desBloquearDiv(div) {
+    $('#' + div).unblock();
+}</script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/overlay.js'); </script><script type="text/javascript">/*!
+ * jQuery blockUI plugin
+ * Version 2.57.0-2013.02.17
+ * @requires jQuery v1.7 or later
+ *
+ * Examples at: http://malsup.com/jquery/block/
+ * Copyright (c) 2007-2013 M. Alsup
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ *
+ * Thanks to Amir-Hossein Sobhi for some excellent contributions!
+ */
+
+;
+(function() {
+    /*jshint eqeqeq:false curly:false latedef:false */
+    "use strict";
+
+    function setup($) {
+        $.fn._fadeIn = $.fn.fadeIn;
+
+        var noOp = $.noop || function() {};
+
+        // this bit is to ensure we don't call setExpression when we shouldn't (with extra muscle to handle
+        // retarded userAgent strings on Vista)
+        var msie = /MSIE/.test(navigator.userAgent);
+        var ie6 = /MSIE 6.0/.test(navigator.userAgent) && !/MSIE 8.0/.test(navigator.userAgent);
+        var mode = document.documentMode || 0;
+        // var setExpr = msie && (($.browser.version < 8 && !mode) || mode < 8);
+        var setExpr = $.isFunction(document.createElement('div').style.setExpression);
+
+        // global $ methods for blocking/unblocking the entire page
+        $.blockUI = function(opts) {
+            install(window, opts);
+        };
+        $.unblockUI = function(opts) {
+            remove(window, opts);
+        };
+
+        // convenience method for quick growl-like notifications  (http://www.google.com/search?q=growl)
+        $.growlUI = function(title, message, timeout, onClose) {
+            var $m = $('<div class="growlUI"></div>');
+            if (title) $m.append('<h1>' + title + '</h1>');
+            if (message) $m.append('<h2>' + message + '</h2>');
+            if (timeout === undefined) timeout = 3000;
+            $.blockUI({
+                message: $m,
+                fadeIn: 700,
+                fadeOut: 1000,
+                centerY: false,
+                timeout: timeout,
+                showOverlay: false,
+                onUnblock: onClose,
+                css: $.blockUI.defaults.growlCSS
+            });
+        };
+
+        // plugin method for blocking element content
+        $.fn.block = function(opts) {
+            var fullOpts = $.extend({}, $.blockUI.defaults, opts || {});
+            this.each(function() {
+                var $el = $(this);
+                if (fullOpts.ignoreIfBlocked && $el.data('blockUI.isBlocked'))
+                    return;
+                $el.unblock({
+                    fadeOut: 0
+                });
+            });
+
+            return this.each(function() {
+                if ($.css(this, 'position') == 'static') {
+                    this.style.position = 'relative';
+                    $(this).data('blockUI.static', true);
+                }
+                this.style.zoom = 1; // force 'hasLayout' in ie
+                install(this, opts);
+            });
+        };
+
+        // plugin method for unblocking element content
+        $.fn.unblock = function(opts) {
+            return this.each(function() {
+                remove(this, opts);
+            });
+        };
+
+        $.blockUI.version = 2.57; // 2nd generation blocking at no extra cost!
+
+        // override these in your code to change the default behavior and style
+        $.blockUI.defaults = {
+            // message displayed when blocking (use null for no message)
+            message: '<h1>Please wait...</h1>',
+
+            title: null, // title string; only used when theme == true
+            draggable: true, // only used when theme == true (requires jquery-ui.js to be loaded)
+
+            theme: false, // set to true to use with jQuery UI themes
+
+            // styles for the message when blocking; if you wish to disable
+            // these and use an external stylesheet then do this in your code:
+            // $.blockUI.defaults.css = {};
+            css: {
+                padding: 0,
+                margin: 0,
+                width: '30%',
+                top: '40%',
+                left: '35%',
+                textAlign: 'center',
+                color: '#000',
+                border: '3px solid #aaa',
+                backgroundColor: '#fff',
+                cursor: 'wait'
+            },
+
+            // minimal style set used when themes are used
+            themedCSS: {
+                width: '30%',
+                top: '40%',
+                left: '35%'
+            },
+
+            // styles for the overlay
+            overlayCSS: {
+                backgroundColor: '#000',
+                opacity: 0.6,
+                cursor: 'wait'
+            },
+
+            // style to replace wait cursor before unblocking to correct issue
+            // of lingering wait cursor
+            cursorReset: 'default',
+
+            // styles applied when using $.growlUI
+            growlCSS: {
+                width: '350px',
+                top: '10px',
+                left: '',
+                right: '10px',
+                border: 'none',
+                padding: '5px',
+                opacity: 0.6,
+                cursor: 'default',
+                color: '#fff',
+                backgroundColor: '#000',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                'border-radius': '10px'
+            },
+
+            // IE issues: 'about:blank' fails on HTTPS and javascript:false is s-l-o-w
+            // (hat tip to Jorge H. N. de Vasconcelos)
+            /*jshint scripturl:true */
+            iframeSrc: /^https/i.test(window.location.href || '') ? 'javascript:false' : 'about:blank',
+
+            // force usage of iframe in non-IE browsers (handy for blocking applets)
+            forceIframe: false,
+
+            // z-index for the blocking overlay
+            baseZ: 1000,
+
+            // set these to true to have the message automatically centered
+            centerX: true, // <-- only effects element blocking (page block controlled via css above)
+            centerY: true,
+
+            // allow body element to be stetched in ie6; this makes blocking look better
+            // on "short" pages.  disable if you wish to prevent changes to the body height
+            allowBodyStretch: true,
+
+            // enable if you want key and mouse events to be disabled for content that is blocked
+            bindEvents: true,
+
+            // be default blockUI will supress tab navigation from leaving blocking content
+            // (if bindEvents is true)
+            constrainTabKey: true,
+
+            // fadeIn time in millis; set to 0 to disable fadeIn on block
+            fadeIn: 200,
+
+            // fadeOut time in millis; set to 0 to disable fadeOut on unblock
+            fadeOut: 400,
+
+            // time in millis to wait before auto-unblocking; set to 0 to disable auto-unblock
+            timeout: 0,
+
+            // disable if you don't want to show the overlay
+            showOverlay: true,
+
+            // if true, focus will be placed in the first available input field when
+            // page blocking
+            focusInput: true,
+
+            // suppresses the use of overlay styles on FF/Linux (due to performance issues with opacity)
+            // no longer needed in 2012
+            // applyPlatformOpacityRules: true,
+
+            // callback method invoked when fadeIn has completed and blocking message is visible
+            onBlock: null,
+
+            // callback method invoked when unblocking has completed; the callback is
+            // passed the element that has been unblocked (which is the window object for page
+            // blocks) and the options that were passed to the unblock call:
+            //	onUnblock(element, options)
+            onUnblock: null,
+
+            // callback method invoked when the overlay area is clicked.
+            // setting this will turn the cursor to a pointer, otherwise cursor defined in overlayCss will be used.
+            onOverlayClick: null,
+
+            // don't ask; if you really must know: http://groups.google.com/group/jquery-en/browse_thread/thread/36640a8730503595/2f6a79a77a78e493#2f6a79a77a78e493
+            quirksmodeOffsetHack: 4,
+
+            // class name of the message block
+            blockMsgClass: 'blockMsg',
+
+            // if it is already blocked, then ignore it (don't unblock and reblock)
+            ignoreIfBlocked: false
+        };
+
+        // private data and functions follow...
+
+        var pageBlock = null;
+        var pageBlockEls = [];
+
+        function install(el, opts) {
+            var css, themedCSS;
+            var full = (el == window);
+            var msg = (opts && opts.message !== undefined ? opts.message : undefined);
+            opts = $.extend({}, $.blockUI.defaults, opts || {});
+
+            if (opts.ignoreIfBlocked && $(el).data('blockUI.isBlocked'))
+                return;
+
+            opts.overlayCSS = $.extend({}, $.blockUI.defaults.overlayCSS, opts.overlayCSS || {});
+            css = $.extend({}, $.blockUI.defaults.css, opts.css || {});
+            if (opts.onOverlayClick)
+                opts.overlayCSS.cursor = 'pointer';
+
+            themedCSS = $.extend({}, $.blockUI.defaults.themedCSS, opts.themedCSS || {});
+            msg = msg === undefined ? opts.message : msg;
+
+            // remove the current block (if there is one)
+            if (full && pageBlock)
+                remove(window, {
+                    fadeOut: 0
+                });
+
+            // if an existing element is being used as the blocking content then we capture
+            // its current place in the DOM (and current display style) so we can restore
+            // it when we unblock
+            if (msg && typeof msg != 'string' && (msg.parentNode || msg.jquery)) {
+                var node = msg.jquery ? msg[0] : msg;
+                var data = {};
+                $(el).data('blockUI.history', data);
+                data.el = node;
+                data.parent = node.parentNode;
+                data.display = node.style.display;
+                data.position = node.style.position;
+                if (data.parent)
+                    data.parent.removeChild(node);
+            }
+
+            $(el).data('blockUI.onUnblock', opts.onUnblock);
+            var z = opts.baseZ;
+
+            // blockUI uses 3 layers for blocking, for simplicity they are all used on every platform;
+            // layer1 is the iframe layer which is used to supress bleed through of underlying content
+            // layer2 is the overlay layer which has opacity and a wait cursor (by default)
+            // layer3 is the message content that is displayed while blocking
+            var lyr1, lyr2, lyr3, s;
+            if (msie || opts.forceIframe)
+                lyr1 = $('<iframe class="blockUI" style="z-index:' + (z++) + ';display:none;border:none;margin:0;padding:0;position:absolute;width:100%;height:100%;top:0;left:0" src="' + opts.iframeSrc + '"></iframe>');
+            else
+                lyr1 = $('<div class="blockUI" style="display:none"></div>');
+
+            if (opts.theme)
+                lyr2 = $('<div class="blockUI blockOverlay ui-widget-overlay" style="z-index:' + (z++) + ';display:none"></div>');
+            else
+                lyr2 = $('<div class="blockUI blockOverlay" style="z-index:' + (z++) + ';display:none;border:none;margin:0;padding:0;width:100%;height:100%;top:0;left:0"></div>');
+
+            if (opts.theme && full) {
+                s = '<div class="blockUI ' + opts.blockMsgClass + ' blockPage ui-dialog ui-widget ui-corner-all" style="z-index:' + (z + 10) + ';display:none;position:fixed">';
+                if (opts.title) {
+                    s += '<div class="ui-widget-header ui-dialog-titlebar ui-corner-all blockTitle">' + (opts.title || '&nbsp;') + '</div>';
+                }
+                s += '<div class="ui-widget-content ui-dialog-content"></div>';
+                s += '</div>';
+            } else if (opts.theme) {
+                s = '<div class="blockUI ' + opts.blockMsgClass + ' blockElement ui-dialog ui-widget ui-corner-all" style="z-index:' + (z + 10) + ';display:none;position:absolute">';
+                if (opts.title) {
+                    s += '<div class="ui-widget-header ui-dialog-titlebar ui-corner-all blockTitle">' + (opts.title || '&nbsp;') + '</div>';
+                }
+                s += '<div class="ui-widget-content ui-dialog-content"></div>';
+                s += '</div>';
+            } else if (full) {
+                s = '<div class="blockUI ' + opts.blockMsgClass + ' blockPage" style="z-index:' + (z + 10) + ';display:none;position:fixed"></div>';
+            } else {
+                s = '<div class="blockUI ' + opts.blockMsgClass + ' blockElement" style="z-index:' + (z + 10) + ';display:none;position:absolute"></div>';
+            }
+            lyr3 = $(s);
+
+            // if we have a message, style it
+            if (msg) {
+                if (opts.theme) {
+                    lyr3.css(themedCSS);
+                    lyr3.addClass('ui-widget-content');
+                } else
+                    lyr3.css(css);
+            }
+
+            // style the overlay
+            if (!opts.theme /*&& (!opts.applyPlatformOpacityRules)*/ )
+                lyr2.css(opts.overlayCSS);
+            lyr2.css('position', full ? 'fixed' : 'absolute');
+
+            // make iframe layer transparent in IE
+            if (msie || opts.forceIframe)
+                lyr1.css('opacity', 0.0);
+
+            //$([lyr1[0],lyr2[0],lyr3[0]]).appendTo(full ? 'body' : el);
+            var layers = [lyr1, lyr2, lyr3],
+                $par = full ? $('body') : $(el);
+            $.each(layers, function() {
+                this.appendTo($par);
+            });
+
+            if (opts.theme && opts.draggable && $.fn.draggable) {
+                lyr3.draggable({
+                    handle: '.ui-dialog-titlebar',
+                    cancel: 'li'
+                });
+            }
+
+            // ie7 must use absolute positioning in quirks mode and to account for activex issues (when scrolling)
+            var expr = setExpr && (!$.support.boxModel || $('object,embed', full ? null : el).length > 0);
+            if (ie6 || expr) {
+                // give body 100% height
+                if (full && opts.allowBodyStretch && $.support.boxModel)
+                    $('html,body').css('height', '100%');
+
+                // fix ie6 issue when blocked element has a border width
+                if ((ie6 || !$.support.boxModel) && !full) {
+                    var t = sz(el, 'borderTopWidth'),
+                        l = sz(el, 'borderLeftWidth');
+                    var fixT = t ? '(0 - ' + t + ')' : 0;
+                    var fixL = l ? '(0 - ' + l + ')' : 0;
+                }
+
+                // simulate fixed position
+                $.each(layers, function(i, o) {
+                    var s = o[0].style;
+                    s.position = 'absolute';
+                    if (i < 2) {
+                        if (full)
+                            s.setExpression('height', 'Math.max(document.body.scrollHeight, document.body.offsetHeight) - (jQuery.support.boxModel?0:' + opts.quirksmodeOffsetHack + ') + "px"');
+                        else
+                            s.setExpression('height', 'this.parentNode.offsetHeight + "px"');
+                        if (full)
+                            s.setExpression('width', 'jQuery.support.boxModel && document.documentElement.clientWidth || document.body.clientWidth + "px"');
+                        else
+                            s.setExpression('width', 'this.parentNode.offsetWidth + "px"');
+                        if (fixL) s.setExpression('left', fixL);
+                        if (fixT) s.setExpression('top', fixT);
+                    } else if (opts.centerY) {
+                        if (full) s.setExpression('top', '(document.documentElement.clientHeight || document.body.clientHeight) / 2 - (this.offsetHeight / 2) + (blah = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + "px"');
+                        s.marginTop = 0;
+                    } else if (!opts.centerY && full) {
+                        var top = (opts.css && opts.css.top) ? parseInt(opts.css.top, 10) : 0;
+                        var expression = '((document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop) + ' + top + ') + "px"';
+                        s.setExpression('top', expression);
+                    }
+                });
+            }
+
+            // show the message
+            if (msg) {
+                if (opts.theme)
+                    lyr3.find('.ui-widget-content').append(msg);
+                else
+                    lyr3.append(msg);
+                if (msg.jquery || msg.nodeType)
+                    $(msg).show();
+            }
+
+            if ((msie || opts.forceIframe) && opts.showOverlay)
+                lyr1.show(); // opacity is zero
+            if (opts.fadeIn) {
+                var cb = opts.onBlock ? opts.onBlock : noOp;
+                var cb1 = (opts.showOverlay && !msg) ? cb : noOp;
+                var cb2 = msg ? cb : noOp;
+                if (opts.showOverlay)
+                    lyr2._fadeIn(opts.fadeIn, cb1);
+                if (msg)
+                    lyr3._fadeIn(opts.fadeIn, cb2);
+            } else {
+                if (opts.showOverlay)
+                    lyr2.show();
+                if (msg)
+                    lyr3.show();
+                if (opts.onBlock)
+                    opts.onBlock();
+            }
+
+            // bind key and mouse events
+            bind(1, el, opts);
+
+            if (full) {
+                pageBlock = lyr3[0];
+                pageBlockEls = $(':input:enabled:visible', pageBlock);
+                if (opts.focusInput)
+                    setTimeout(focus, 20);
+            } else
+                center(lyr3[0], opts.centerX, opts.centerY);
+
+            if (opts.timeout) {
+                // auto-unblock
+                var to = setTimeout(function() {
+                    if (full)
+                        $.unblockUI(opts);
+                    else
+                        $(el).unblock(opts);
+                }, opts.timeout);
+                $(el).data('blockUI.timeout', to);
+            }
+        }
+
+        // remove the block
+        function remove(el, opts) {
+            var full = (el == window);
+            var $el = $(el);
+            var data = $el.data('blockUI.history');
+            var to = $el.data('blockUI.timeout');
+            if (to) {
+                clearTimeout(to);
+                $el.removeData('blockUI.timeout');
+            }
+            opts = $.extend({}, $.blockUI.defaults, opts || {});
+            bind(0, el, opts); // unbind events
+
+            if (opts.onUnblock === null) {
+                opts.onUnblock = $el.data('blockUI.onUnblock');
+                $el.removeData('blockUI.onUnblock');
+            }
+
+            var els;
+            if (full) // crazy selector to handle odd field errors in ie6/7
+                els = $('body').children().filter('.blockUI').add('body > .blockUI');
+            else
+                els = $el.find('>.blockUI');
+
+            // fix cursor issue
+            if (opts.cursorReset) {
+                if (els.length > 1)
+                    els[1].style.cursor = opts.cursorReset;
+                if (els.length > 2)
+                    els[2].style.cursor = opts.cursorReset;
+            }
+
+            if (full)
+                pageBlock = pageBlockEls = null;
+
+            if (opts.fadeOut) {
+                els.fadeOut(opts.fadeOut);
+                setTimeout(function() {
+                    reset(els, data, opts, el);
+                }, opts.fadeOut);
+            } else
+                reset(els, data, opts, el);
+        }
+
+        // move blocking element back into the DOM where it started
+        function reset(els, data, opts, el) {
+            var $el = $(el);
+            els.each(function(i, o) {
+                // remove via DOM calls so we don't lose event handlers
+                if (this.parentNode)
+                    this.parentNode.removeChild(this);
+            });
+
+            if (data && data.el) {
+                data.el.style.display = data.display;
+                data.el.style.position = data.position;
+                if (data.parent)
+                    data.parent.appendChild(data.el);
+                $el.removeData('blockUI.history');
+            }
+
+            if ($el.data('blockUI.static')) {
+                $el.css('position', 'static'); // #22
+            }
+
+            if (typeof opts.onUnblock == 'function')
+                opts.onUnblock(el, opts);
+
+            // fix issue in Safari 6 where block artifacts remain until reflow
+            var body = $(document.body),
+                w = body.width(),
+                cssW = body[0].style.width;
+            body.width(w - 1).width(w);
+            body[0].style.width = cssW;
+        }
+
+        // bind/unbind the handler
+        function bind(b, el, opts) {
+            var full = el == window,
+                $el = $(el);
+
+            // don't bother unbinding if there is nothing to unbind
+            if (!b && (full && !pageBlock || !full && !$el.data('blockUI.isBlocked')))
+                return;
+
+            $el.data('blockUI.isBlocked', b);
+
+            // don't bind events when overlay is not in use or if bindEvents is false
+            if (!opts.bindEvents || (b && !opts.showOverlay))
+                return;
+
+            // bind anchors and inputs for mouse and key events
+            var events = 'mousedown mouseup keydown keypress keyup touchstart touchend touchmove';
+            if (b)
+                $(document).bind(events, opts, handler);
+            else
+                $(document).unbind(events, handler);
+
+            // former impl...
+            //		var $e = $('a,:input');
+            //		b ? $e.bind(events, opts, handler) : $e.unbind(events, handler);
+        }
+
+        // event handler to suppress keyboard/mouse events when blocking
+        function handler(e) {
+            // allow tab navigation (conditionally)
+            if (e.keyCode && e.keyCode == 9) {
+                if (pageBlock && e.data.constrainTabKey) {
+                    var els = pageBlockEls;
+                    var fwd = !e.shiftKey && e.target === els[els.length - 1];
+                    var back = e.shiftKey && e.target === els[0];
+                    if (fwd || back) {
+                        setTimeout(function() {
+                            focus(back);
+                        }, 10);
+                        return false;
+                    }
+                }
+            }
+            var opts = e.data;
+            var target = $(e.target);
+            if (target.hasClass('blockOverlay') && opts.onOverlayClick)
+                opts.onOverlayClick();
+
+            // allow events within the message content
+            if (target.parents('div.' + opts.blockMsgClass).length > 0)
+                return true;
+
+            // allow events for content that is not being blocked
+            return target.parents().children().filter('div.blockUI').length === 0;
+        }
+
+        function focus(back) {
+            if (!pageBlockEls)
+                return;
+            var e = pageBlockEls[back === true ? pageBlockEls.length - 1 : 0];
+            if (e)
+                e.focus();
+        }
+
+        function center(el, x, y) {
+            var p = el.parentNode,
+                s = el.style;
+            var l = ((p.offsetWidth - el.offsetWidth) / 2) - sz(p, 'borderLeftWidth');
+            var t = ((p.offsetHeight - el.offsetHeight) / 2) - sz(p, 'borderTopWidth');
+            if (x) s.left = l > 0 ? (l + 'px') : '0';
+            if (y) s.top = t > 0 ? (t + 'px') : '0';
+        }
+
+        function sz(el, p) {
+            return parseInt($.css(el, p), 10) || 0;
+        }
+
+    }
+
+
+    /*global define:true */
+    if (typeof define === 'function' && define.amd && define.amd.jQuery) {
+        define(['jquery'], setup);
+    } else {
+        setup(jQuery);
+    }
+
+})();</script>
+
+    <script type="text/javascript">/**
+ * noty - jQuery Notification Plugin v2.2.2
+ * Contributors: https://github.com/needim/noty/graphs/contributors
+ *
+ * Examples and Documentation - http://needim.github.com/noty/
+ *
+ * Licensed under the MIT licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ **/
+
+if (typeof Object.create !== 'function') {
+    Object.create = function (o) {
+        function F() {
+        }
+
+        F.prototype = o;
+        return new F();
+    };
+}
+
+(function ($) {
+
+    var NotyObject = {
+
+        init:function (options) {
+
+            // Mix in the passed in options with the default options
+            this.options = $.extend({}, $.noty.defaults, options);
+
+            this.options.layout = (this.options.custom) ? $.noty.layouts['inline'] : $.noty.layouts[this.options.layout];
+
+			if ($.noty.themes[this.options.theme])
+            	this.options.theme = $.noty.themes[this.options.theme];
+			else
+				options.themeClassName = this.options.theme;
+
+            delete options.layout;
+            delete options.theme;
+
+            this.options = $.extend({}, this.options, this.options.layout.options);
+            this.options.id = 'noty_' + (new Date().getTime() * Math.floor(Math.random() * 1000000));
+
+            this.options = $.extend({}, this.options, options);
+
+            // Build the noty dom initial structure
+            this._build();
+
+            // return this so we can chain/use the bridge with less code.
+            return this;
+        }, // end init
+
+        _build:function () {
+
+            // Generating noty bar
+            var $bar = $('<div class="noty_bar noty_type_' + this.options.type + '"></div>').attr('id', this.options.id);
+            $bar.append(this.options.template).find('.noty_text').html(this.options.text);
+
+            this.$bar = (this.options.layout.parent.object !== null) ? $(this.options.layout.parent.object).css(this.options.layout.parent.css).append($bar) : $bar;
+
+			if (this.options.themeClassName)
+				this.$bar.addClass(this.options.themeClassName).addClass('noty_container_type_' + this.options.type);
+
+            // Set buttons if available
+            if (this.options.buttons) {
+
+                // If we have button disable closeWith & timeout options
+                this.options.closeWith = [];
+                this.options.timeout = false;
+
+                var $buttons = $('<div/>').addClass('noty_buttons');
+
+                (this.options.layout.parent.object !== null) ? this.$bar.find('.noty_bar').append($buttons) : this.$bar.append($buttons);
+
+                var self = this;
+
+                $.each(this.options.buttons, function (i, button) {
+                    var $button = $('<button/>').addClass((button.addClass) ? button.addClass : 'gray').html(button.text).attr('id', button.id ? button.id : 'button-' + i)
+                        .appendTo(self.$bar.find('.noty_buttons'))
+                        .bind('click', function () {
+                            if ($.isFunction(button.onClick)) {
+                                button.onClick.call($button, self);
+                            }
+                        });
+                });
+            }
+
+            // For easy access
+            this.$message = this.$bar.find('.noty_message');
+            this.$closeButton = this.$bar.find('.noty_close');
+            this.$buttons = this.$bar.find('.noty_buttons');
+
+            $.noty.store[this.options.id] = this; // store noty for api
+
+        }, // end _build
+
+        show:function () {
+
+            var self = this;
+
+			(self.options.custom) ? self.options.custom.find(self.options.layout.container.selector).append(self.$bar) : $(self.options.layout.container.selector).append(self.$bar);
+
+			if (self.options.theme && self.options.theme.style)
+            	self.options.theme.style.apply(self);
+
+            ($.type(self.options.layout.css) === 'function') ? this.options.layout.css.apply(self.$bar) : self.$bar.css(this.options.layout.css || {});
+
+            self.$bar.addClass(self.options.layout.addClass);
+
+            self.options.layout.container.style.apply($(self.options.layout.container.selector));
+
+            self.showing = true;
+
+			if (self.options.theme && self.options.theme.style)
+            	self.options.theme.callback.onShow.apply(this);
+
+            if ($.inArray('click', self.options.closeWith) > -1)
+                self.$bar.css('cursor', 'pointer').one('click', function (evt) {
+                    self.stopPropagation(evt);
+                    if (self.options.callback.onCloseClick) {
+                        self.options.callback.onCloseClick.apply(self);
+                    }
+                    self.close();
+                });
+
+            if ($.inArray('hover', self.options.closeWith) > -1)
+                self.$bar.one('mouseenter', function () {
+                    self.close();
+                });
+
+            if ($.inArray('button', self.options.closeWith) > -1)
+                self.$closeButton.one('click', function (evt) {
+                    self.stopPropagation(evt);
+                    self.close();
+                });
+
+            if ($.inArray('button', self.options.closeWith) == -1)
+                self.$closeButton.remove();
+
+            if (self.options.callback.onShow)
+                self.options.callback.onShow.apply(self);
+
+            self.$bar.animate(
+                self.options.animation.open,
+                self.options.animation.speed,
+                self.options.animation.easing,
+                function () {
+                    if (self.options.callback.afterShow) self.options.callback.afterShow.apply(self);
+                    self.showing = false;
+                    self.shown = true;
+                });
+
+            // If noty is have a timeout option
+            if (self.options.timeout)
+                self.$bar.delay(self.options.timeout).promise().done(function () {
+                    self.close();
+                });
+
+            return this;
+
+        }, // end show
+
+        close:function () {
+
+            if (this.closed) return;
+            if (this.$bar && this.$bar.hasClass('i-am-closing-now')) return;
+
+            var self = this;
+
+            if (this.showing) {
+              self.$bar.queue(
+                function () {
+                  self.close.apply(self);
+                }
+              )
+              return;
+            }
+
+            if (!this.shown && !this.showing) { // If we are still waiting in the queue just delete from queue
+                var queue = [];
+                $.each($.noty.queue, function (i, n) {
+                    if (n.options.id != self.options.id) {
+                        queue.push(n);
+                    }
+                });
+                $.noty.queue = queue;
+                return;
+            }
+
+            self.$bar.addClass('i-am-closing-now');
+
+            if (self.options.callback.onClose) {
+                self.options.callback.onClose.apply(self);
+            }
+
+            self.$bar.clearQueue().stop().animate(
+                self.options.animation.close,
+                self.options.animation.speed,
+                self.options.animation.easing,
+                function () {
+                    if (self.options.callback.afterClose) self.options.callback.afterClose.apply(self);
+                })
+                .promise().done(function () {
+
+                    // Modal Cleaning
+                    if (self.options.modal) {
+                        $.notyRenderer.setModalCount(-1);
+                        if ($.notyRenderer.getModalCount() == 0) $('.noty_modal').fadeOut('fast', function () {
+                            $(this).remove();
+                        });
+                    }
+
+                    // Layout Cleaning
+                    $.notyRenderer.setLayoutCountFor(self, -1);
+                    if ($.notyRenderer.getLayoutCountFor(self) == 0) $(self.options.layout.container.selector).remove();
+
+                    // Make sure self.$bar has not been removed before attempting to remove it
+                    if (typeof self.$bar !== 'undefined' && self.$bar !== null ) {
+                        self.$bar.remove();
+                        self.$bar = null;
+                        self.closed = true;
+                    }
+
+                    delete $.noty.store[self.options.id]; // deleting noty from store
+
+                    if(self.options.theme.callback && self.options.theme.callback.onClose) {
+                        self.options.theme.callback.onClose.apply(self);
+                    }
+
+                    if (!self.options.dismissQueue) {
+                        // Queue render
+                        $.noty.ontap = true;
+
+                        $.notyRenderer.render();
+                    }
+
+					if (self.options.maxVisible > 0 && self.options.dismissQueue) {
+						$.notyRenderer.render();
+					}
+                })
+
+        }, // end close
+
+        setText:function (text) {
+            if (!this.closed) {
+                this.options.text = text;
+                this.$bar.find('.noty_text').html(text);
+            }
+            return this;
+        },
+
+        setType:function (type) {
+            if (!this.closed) {
+                this.options.type = type;
+                this.options.theme.style.apply(this);
+                this.options.theme.callback.onShow.apply(this);
+            }
+            return this;
+        },
+
+        setTimeout:function (time) {
+            if (!this.closed) {
+                var self = this;
+                this.options.timeout = time;
+                self.$bar.delay(self.options.timeout).promise().done(function () {
+                    self.close();
+                });
+            }
+            return this;
+        },
+
+        stopPropagation:function (evt) {
+            evt = evt || window.event;
+            if (typeof evt.stopPropagation !== "undefined") {
+                evt.stopPropagation();
+            } else {
+                evt.cancelBubble = true;
+            }
+        },
+
+        closed:false,
+        showing:false,
+        shown:false
+
+    }; // end NotyObject
+
+    $.notyRenderer = {};
+
+    $.notyRenderer.init = function (options) {
+
+        // Renderer creates a new noty
+        var notification = Object.create(NotyObject).init(options);
+
+		if (notification.options.killer)
+			$.noty.closeAll();
+
+        (notification.options.force) ? $.noty.queue.unshift(notification) : $.noty.queue.push(notification);
+
+        $.notyRenderer.render();
+
+        return ($.noty.returns == 'object') ? notification : notification.options.id;
+    };
+
+    $.notyRenderer.render = function () {
+
+        var instance = $.noty.queue[0];
+
+        if ($.type(instance) === 'object') {
+            if (instance.options.dismissQueue) {
+				if (instance.options.maxVisible > 0) {
+					if ($(instance.options.layout.container.selector + ' li').length < instance.options.maxVisible) {
+						$.notyRenderer.show($.noty.queue.shift());
+					} else {
+
+					}
+				} else {
+					$.notyRenderer.show($.noty.queue.shift());
+				}
+            } else {
+                if ($.noty.ontap) {
+                    $.notyRenderer.show($.noty.queue.shift());
+                    $.noty.ontap = false;
+                }
+            }
+        } else {
+            $.noty.ontap = true; // Queue is over
+        }
+
+    };
+
+    $.notyRenderer.show = function (notification) {
+
+        if (notification.options.modal) {
+            $.notyRenderer.createModalFor(notification);
+            $.notyRenderer.setModalCount(+1);
+        }
+
+        // Where is the container?
+		if (notification.options.custom) {
+			if (notification.options.custom.find(notification.options.layout.container.selector).length == 0) {
+				notification.options.custom.append($(notification.options.layout.container.object).addClass('i-am-new'));
+			} else {
+				notification.options.custom.find(notification.options.layout.container.selector).removeClass('i-am-new');
+			}
+		} else {
+			if ($(notification.options.layout.container.selector).length == 0) {
+				$('body').append($(notification.options.layout.container.object).addClass('i-am-new'));
+			} else {
+				$(notification.options.layout.container.selector).removeClass('i-am-new');
+			}
+		}
+
+        $.notyRenderer.setLayoutCountFor(notification, +1);
+
+        notification.show();
+    };
+
+    $.notyRenderer.createModalFor = function (notification) {
+        if ($('.noty_modal').length == 0) {
+			var modal = $('<div/>').addClass('noty_modal').addClass(notification.options.theme).data('noty_modal_count', 0);
+
+			if (notification.options.theme.modal && notification.options.theme.modal.css)
+				modal.css(notification.options.theme.modal.css);
+
+			modal.prependTo($('body')).fadeIn('fast');
+		}
+    };
+
+    $.notyRenderer.getLayoutCountFor = function (notification) {
+        return $(notification.options.layout.container.selector).data('noty_layout_count') || 0;
+    };
+
+    $.notyRenderer.setLayoutCountFor = function (notification, arg) {
+        return $(notification.options.layout.container.selector).data('noty_layout_count', $.notyRenderer.getLayoutCountFor(notification) + arg);
+    };
+
+    $.notyRenderer.getModalCount = function () {
+        return $('.noty_modal').data('noty_modal_count') || 0;
+    };
+
+    $.notyRenderer.setModalCount = function (arg) {
+        return $('.noty_modal').data('noty_modal_count', $.notyRenderer.getModalCount() + arg);
+    };
+
+    // This is for custom container
+    $.fn.noty = function (options) {
+        options.custom = $(this);
+        return $.notyRenderer.init(options);
+    };
+
+    $.noty = {};
+    $.noty.queue = [];
+    $.noty.ontap = true;
+    $.noty.layouts = {};
+    $.noty.themes = {};
+    $.noty.returns = 'object';
+    $.noty.store = {};
+
+    $.noty.get = function (id) {
+        return $.noty.store.hasOwnProperty(id) ? $.noty.store[id] : false;
+    };
+
+    $.noty.close = function (id) {
+        return $.noty.get(id) ? $.noty.get(id).close() : false;
+    };
+
+    $.noty.setText = function (id, text) {
+        return $.noty.get(id) ? $.noty.get(id).setText(text) : false;
+    };
+
+    $.noty.setType = function (id, type) {
+        return $.noty.get(id) ? $.noty.get(id).setType(type) : false;
+    };
+
+    $.noty.clearQueue = function () {
+        $.noty.queue = [];
+    };
+
+    $.noty.closeAll = function () {
+        $.noty.clearQueue();
+        $.each($.noty.store, function (id, noty) {
+            noty.close();
+        });
+    };
+
+    var windowAlert = window.alert;
+
+    $.noty.consumeAlert = function (options) {
+        window.alert = function (text) {
+            if (options)
+                options.text = text;
+            else
+                options = {text:text};
+
+            $.notyRenderer.init(options);
+        };
+    };
+
+    $.noty.stopConsumeAlert = function () {
+        window.alert = windowAlert;
+    };
+
+    $.noty.defaults = {
+        layout:'top',
+        theme:'defaultTheme',
+        type:'alert',
+        text:'',
+        dismissQueue:true,
+        template:'<div class="noty_message"><span class="noty_text"></span><div class="noty_close"></div></div>',
+        animation:{
+            open:{height:'toggle'},
+            close:{height:'toggle'},
+            easing:'swing',
+            speed:500
+        },
+        timeout:false,
+        force:false,
+        modal:false,
+        maxVisible:5,
+		killer: false,
+        closeWith:['click'],
+        callback:{
+            onShow:function () {
+            },
+            afterShow:function () {
+            },
+            onClose:function () {
+            },
+            afterClose:function () {
+            },
+            onCloseClick:function () {
+            }
+        },
+        buttons:false
+    };
+
+    $(window).resize(function () {
+        $.each($.noty.layouts, function (index, layout) {
+            layout.container.style.apply($(layout.container.selector));
+        });
+    });
+
+})(jQuery);
+
+// Helpers
+window.noty = function noty(options) {
+    return jQuery.notyRenderer.init(options);
+};
+</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.top = {
+		name: 'top',
+		options: {},
+		container: {
+			object: '<ul id="noty_top_layout_container" />',
+			selector: 'ul#noty_top_layout_container',
+			style: function() {
+				$(this).css({
+					top: 0,
+					left: '5%',
+					position: 'fixed',
+					width: '90%',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 9999999
+				});
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none'
+		},
+		addClass: ''
+	};
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.topLeft = {
+		name: 'topLeft',
+		options: { // overrides options
+			
+		},
+		container: {
+			object: '<ul id="noty_topLeft_layout_container" />',
+			selector: 'ul#noty_topLeft_layout_container',
+			style: function() {
+				$(this).css({
+					top: 20,
+					left: 20,
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				if (window.innerWidth < 600) {
+					$(this).css({
+						left: 5
+					});
+				}
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.topCenter = {
+		name: 'topCenter',
+		options: { // overrides options
+
+		},
+		container: {
+			object: '<ul id="noty_topCenter_layout_container" />',
+			selector: 'ul#noty_topCenter_layout_container',
+			style: function() {
+				$(this).css({
+					top: 20,
+					left: 0,
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				$(this).css({
+					left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px'
+				});
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);
+</script><script type="text/javascript">(function($) {
+
+    $.noty.layouts.topRight = {
+        name: 'topRight',
+        options: { // overrides options
+
+        },
+        container: {
+            object: '<ul id="noty_topRight_layout_container" />',
+            selector: 'ul#noty_topRight_layout_container',
+            style: function() {
+                $(this).css({
+                    top: 20,
+                    right: 20,
+                    position: 'fixed',
+                    width: '510px',
+                    height: 'auto',
+                    margin: 0,
+                    padding: 0,
+                    listStyleType: 'none',
+                    zIndex: 10000000
+                });
+
+                if (window.innerWidth < 600) {
+                    $(this).css({
+                        right: 5
+                    });
+                }
+            }
+        },
+        parent: {
+            object: '<li />',
+            selector: 'li',
+            css: {}
+        },
+        css: {
+            display: 'none',
+            width: '510px'
+        },
+        addClass: ''
+    };
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.center = {
+		name: 'center',
+		options: { // overrides options
+			
+		},
+		container: {
+			object: '<ul id="noty_center_layout_container" />',
+			selector: 'ul#noty_center_layout_container',
+			style: function() {
+				$(this).css({
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				// getting hidden height
+				var dupe = $(this).clone().css({visibility:"hidden", display:"block", position:"absolute", top: 0, left: 0}).attr('id', 'dupe');
+				$("body").append(dupe);
+				dupe.find('.i-am-closing-now').remove();
+				dupe.find('li').css('display', 'block');
+				var actual_height = dupe.height();
+				dupe.remove();
+
+				if ($(this).hasClass('i-am-new')) {
+					$(this).css({
+						left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px',
+						top: ($(window).height() - actual_height) / 2 + 'px'
+					});
+				} else {
+					$(this).animate({
+						left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px',
+						top: ($(window).height() - actual_height) / 2 + 'px'
+					}, 500);
+				}
+				
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.centerLeft = {
+		name: 'centerLeft',
+		options: { // overrides options
+
+		},
+		container: {
+			object: '<ul id="noty_centerLeft_layout_container" />',
+			selector: 'ul#noty_centerLeft_layout_container',
+			style: function() {
+				$(this).css({
+					left: 20,
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				// getting hidden height
+				var dupe = $(this).clone().css({visibility:"hidden", display:"block", position:"absolute", top: 0, left: 0}).attr('id', 'dupe');
+				$("body").append(dupe);
+				dupe.find('.i-am-closing-now').remove();
+				dupe.find('li').css('display', 'block');
+				var actual_height = dupe.height();
+				dupe.remove();
+
+				if ($(this).hasClass('i-am-new')) {
+					$(this).css({
+						top: ($(window).height() - actual_height) / 2 + 'px'
+					});
+				} else {
+					$(this).animate({
+						top: ($(window).height() - actual_height) / 2 + 'px'
+					}, 500);
+				}
+
+				if (window.innerWidth < 600) {
+					$(this).css({
+						left: 5
+					});
+				}
+
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);
+</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.centerRight = {
+		name: 'centerRight',
+		options: { // overrides options
+
+		},
+		container: {
+			object: '<ul id="noty_centerRight_layout_container" />',
+			selector: 'ul#noty_centerRight_layout_container',
+			style: function() {
+				$(this).css({
+					right: 20,
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				// getting hidden height
+				var dupe = $(this).clone().css({visibility:"hidden", display:"block", position:"absolute", top: 0, left: 0}).attr('id', 'dupe');
+				$("body").append(dupe);
+				dupe.find('.i-am-closing-now').remove();
+				dupe.find('li').css('display', 'block');
+				var actual_height = dupe.height();
+				dupe.remove();
+
+				if ($(this).hasClass('i-am-new')) {
+					$(this).css({
+						top: ($(window).height() - actual_height) / 2 + 'px'
+					});
+				} else {
+					$(this).animate({
+						top: ($(window).height() - actual_height) / 2 + 'px'
+					}, 500);
+				}
+
+				if (window.innerWidth < 600) {
+					$(this).css({
+						right: 5
+					});
+				}
+
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);
+</script><script type="text/javascript">(function($) {
+
+    $.noty.layouts.bottom = {
+        name: 'bottom',
+        options: {},
+        container: {
+            object: '<ul id="noty_bottom_layout_container" />',
+            selector: 'ul#noty_bottom_layout_container',
+            style: function() {
+                $(this).css({
+                    bottom: 0,
+                    left: '1%',
+                    position: 'fixed',
+                    width: '98%',
+                    height: 'auto',
+                    margin: 0,
+                    padding: 0,
+                    listStyleType: 'none',
+                    zIndex: 9999999
+                });
+            }
+        },
+        parent: {
+            object: '<li />',
+            selector: 'li',
+            css: {}
+        },
+        css: {
+            display: 'none'
+        },
+        addClass: ''
+    };
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+    $.noty.layouts.bottomLeft = {
+        name: 'bottomLeft',
+        options: { // overrides options
+
+        },
+        container: {
+            object: '<ul id="noty_bottomLeft_layout_container" />',
+            selector: 'ul#noty_bottomLeft_layout_container',
+            style: function() {
+                $(this).css({
+                    bottom: 32,
+                    left: '1%',
+                    position: 'fixed',
+                    width: '100%',
+                    height: 'auto',
+                    margin: 0,
+                    padding: 0,
+                    listStyleType: 'none',
+                    zIndex: 10000000
+                });
+
+                if (window.innerWidth < 600) {
+                    $(this).css({
+                        left: 5
+                    });
+                }
+            }
+        },
+        parent: {
+            object: '<li />',
+            selector: 'li',
+            css: {
+                borderRadius: '0px',
+
+            }
+        },
+        css: {
+            display: 'none',
+            width: '98%'
+        },
+        addClass: ''
+    };
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.bottomCenter = {
+		name: 'bottomCenter',
+		options: { // overrides options
+
+		},
+		container: {
+			object: '<ul id="noty_bottomCenter_layout_container" />',
+			selector: 'ul#noty_bottomCenter_layout_container',
+			style: function() {
+				$(this).css({
+					bottom: 20,
+					left: 0,
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				$(this).css({
+					left: ($(window).width() - $(this).outerWidth(false)) / 2 + 'px'
+				});
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);
+</script><script type="text/javascript">(function($) {
+
+	$.noty.layouts.bottomRight = {
+		name: 'bottomRight',
+		options: { // overrides options
+			
+		},
+		container: {
+			object: '<ul id="noty_bottomRight_layout_container" />',
+			selector: 'ul#noty_bottomRight_layout_container',
+			style: function() {
+				$(this).css({
+					bottom: 20,
+					right: 20,
+					position: 'fixed',
+					width: '310px',
+					height: 'auto',
+					margin: 0,
+					padding: 0,
+					listStyleType: 'none',
+					zIndex: 10000000
+				});
+
+				if (window.innerWidth < 600) {
+					$(this).css({
+						right: 5
+					});
+				}
+			}
+		},
+		parent: {
+			object: '<li />',
+			selector: 'li',
+			css: {}
+		},
+		css: {
+			display: 'none',
+			width: '310px'
+		},
+		addClass: ''
+	};
+
+})(jQuery);</script><script type="text/javascript">(function($) {
+
+    $.noty.themes.defaultTheme = {
+        name: 'defaultTheme',
+        helpers: {
+            borderFix: function() {
+                if (this.options.dismissQueue) {
+                    var selector = this.options.layout.container.selector + ' ' + this.options.layout.parent.selector;
+                    switch (this.options.layout.name) {
+                        case 'top':
+                            $(selector).css({
+                                borderRadius: '0px 0px 0px 0px'
+                            });
+                            $(selector).last().css({
+                                borderRadius: '0px'
+                            });
+                            break;
+                        case 'topCenter':
+                        case 'topLeft':
+                        case 'topRight':
+                        case 'bottomCenter':
+                        case 'bottomLeft':
+                        case 'bottomRight':
+                        case 'center':
+                        case 'centerLeft':
+                        case 'centerRight':
+                        case 'inline':
+                            $(selector).css({
+                                borderRadius: '0px 0px 0px 0px'
+                            });
+                            $(selector).first().css({
+                                'border-top-left-radius': '0px',
+                                'border-top-right-radius': '0px'
+                            });
+                            $(selector).last().css({
+                                'border-bottom-left-radius': '0px',
+                                'border-bottom-right-radius': '0px'
+                            });
+                            break;
+                        case 'bottom':
+                            $(selector).css({
+                                borderRadius: '0px 0px 0px 0px'
+                            });
+                            $(selector).first().css({
+                                borderRadius: '0px'
+                            });
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        },
+        modal: {
+            css: {
+                position: 'fixed',
+                width: '100%',
+                height: '100%',
+                backgroundColor: '#000',
+                zIndex: 10000,
+                opacity: 0.6,
+                display: 'none',
+                left: 0,
+                top: 0
+            }
+        },
+        style: function() {
+
+            this.$bar.css({
+                overflow: 'hidden',
+                background: "#4E8C41"
+            });
+
+            this.$message.css({
+                fontSize: '14px',
+                lineHeight: '13px',
+                textAlign: 'center',
+                heigh: '30px',
+                width: 'auto',
+                paddingTop: '7px',
+                height: '23px',
+                position: 'relative'
+            });
+
+            this.$closeButton.css({
+                position: 'absolute',
+                top: 4,
+                right: 4,
+                width: 10,
+                height: 10,
+                background: "url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAAAAgY0hSTQAAeiUAAICDAAD5/wAAgOkAAHUwAADqYAAAOpgAABdvkl/FRgAAATpJREFUeNoszrFqVFEUheG19zlz7sQ7ijMQBAvfYBqbpJCoZSAQbOwEE1IHGytbLQUJ8SUktW8gCCFJMSGSNxCmFBJO7j5rpXD6n5/P5vM53H3b3T9LOiB5AQDuDjM7BnA7DMPHDGBH0nuSzwHsRcRVRNRSysuU0i6AOwA/02w2+9Fae00SEbEh6SGAR5K+k3zWWptKepCm0+kpyRoRGyRBcpPkDsn1iEBr7drdP2VJZyQXERGSPpiZAViTBACXKaV9kqd5uVzCzO5KKb/d/UZSDwD/eyxqree1VqSu6zKAF2Z2RPJJaw0rAkjOJT0m+SuT/AbgDcmnkmBmfwAsJL1dXQ8lWY6IGwB1ZbrOOb8zs8thGP4COFwx/mE8Ho9Go9ErMzvJOW/1fY/JZIJSypqZfXX3L13X9fcDAKJct1sx3OiuAAAAAElFTkSuQmCC)",
+                display: 'none',
+                cursor: 'pointer'
+            });
+
+            this.$buttons.css({
+                padding: 5,
+                textAlign: 'right',
+                borderTop: '1px solid #ccc',
+                backgroundColor: '#fff'
+            });
+
+            this.$buttons.find('button').css({
+                marginLeft: 5
+            });
+
+            this.$buttons.find('button:first').css({
+                marginLeft: 0
+            });
+
+            this.$bar.bind({
+                mouseenter: function() {
+                    $(this).find('.noty_close').stop().fadeTo('normal', 1);
+                },
+                mouseleave: function() {
+                    $(this).find('.noty_close').stop().fadeTo('normal', 0);
+                }
+            });
+
+            switch (this.options.layout.name) {
+                case 'top':
+                    this.$bar.css({
+                        borderRadius: '0px',
+                        borderBottom: '2px solid #eee',
+                        borderLeft: '2px solid #eee',
+                        borderRight: '2px solid #eee',
+                        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"
+                    });
+                    break;
+                case 'topCenter':
+                case 'center':
+                case 'bottomCenter':
+                case 'inline':
+                    this.$bar.css({
+                        borderRadius: '0px',
+                        border: '1px solid #eee',
+                        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"
+                    });
+                    this.$message.css({
+                        fontSize: '13px',
+                        textAlign: 'center'
+                    });
+                    break;
+                case 'topLeft':
+                case 'topRight':
+                case 'bottomLeft':
+                case 'bottomRight':
+                case 'centerLeft':
+                case 'centerRight':
+                    this.$bar.css({
+                        borderRadius: '0px',
+                        border: '1px solid #eee',
+                        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"
+                    });
+                    this.$message.css({
+                        fontSize: '13px',
+                        textAlign: 'left'
+                    });
+                    break;
+                case 'bottom':
+                    this.$bar.css({
+                        borderRadius: '0px',
+                        borderTop: '2px solid #eee',
+                        borderLeft: '2px solid #eee',
+                        borderRight: '2px solid #eee',
+                        boxShadow: "0 -2px 4px rgba(0, 0, 0, 0.1)"
+                    });
+                    break;
+                default:
+                    this.$bar.css({
+                        border: '2px solid #eee',
+                        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)"
+                    });
+                    break;
+            }
+
+            switch (this.options.type) {
+                case 'alert':
+                case 'notification':
+                    this.$bar.css({
+                        backgroundColor: '#FFF',
+                        borderColor: '#CCC',
+                        color: '#444'
+                    });
+                    break;
+                case 'warning':
+                    this.$bar.css({
+                        backgroundColor: '',
+                        borderColor: '',
+                        color: '#826200'
+                    });
+                    this.$buttons.css({
+                        borderTop: '1px solid #FFC237'
+                    });
+                    break;
+                case 'error':
+                    this.$bar.css({
+                        backgroundColor: 'red',
+                        borderColor: '#cb534f',
+                        color: '#FFF'
+                    });
+                    this.$message.css({
+                        fontWeight: 'bold'
+                    });
+                    this.$buttons.css({
+                        borderTop: '1px solid #cb534f'
+                    });
+                    break;
+                case 'information':
+                    this.$bar.css({
+                        backgroundColor: '#57B7E2',
+                        borderColor: '#FFFFFF',
+                        color: '#FFF'
+                    });
+                    this.$buttons.css({
+                        borderTop: '1px solid #FFFFFF'
+                    });
+                    break;
+                case 'success':
+                    this.$bar.css({
+                        backgroundColor: '#4E8C41',
+                        borderColor: '#4E8C41',
+                        color: '#ffffff',
+                        borderRadius: '0px'
+                    });
+                    this.$buttons.css({
+                        borderTop: '1px solid #4E8C41'
+                    });
+                    break;
+                default:
+                    this.$bar.css({
+                        backgroundColor: '#FFF',
+                        borderColor: '#CCC',
+                        color: '#444'
+                    });
+                    break;
+            }
+        },
+        callback: {
+            onShow: function() {
+                $.noty.themes.defaultTheme.helpers.borderFix.apply(this);
+            },
+            onClose: function() {
+                $.noty.themes.defaultTheme.helpers.borderFix.apply(this);
+            }
+        }
+    };
+
+})(jQuery);</script><script type="text/javascript">/*global Element */
+(function( window, document ) {
+	'use strict';
+
+	var keyboardAllowed = typeof Element !== 'undefined' && 'ALLOW_KEYBOARD_INPUT' in Element, // IE6 throws without typeof check
+
+		fn = (function() {
+			var fnMap = [
+				[
+					'requestFullscreen',
+					'exitFullscreen',
+					'fullscreenchange',
+					'fullscreen',
+					'fullscreenElement',
+					'fullscreenerror'
+				],
+				[
+					'webkitRequestFullScreen',
+					'webkitCancelFullScreen',
+					'webkitfullscreenchange',
+					'webkitIsFullScreen',
+					'webkitCurrentFullScreenElement',
+					'webkitfullscreenerror'
+
+				],
+				[
+					'mozRequestFullScreen',
+					'mozCancelFullScreen',
+					'mozfullscreenchange',
+					'mozFullScreen',
+					'mozFullScreenElement',
+					'mozfullscreenerror'
+				]
+			],
+			i = 0,
+			l = fnMap.length,
+			ret = {},
+			val,
+			valLength;
+
+			for ( ; i < l; i++ ) {
+				val = fnMap[ i ];
+				if ( val && val[1] in document ) {
+					for ( i = 0, valLength = val.length; i < valLength; i++ ) {
+						ret[ fnMap[0][ i ] ] = val[ i ];
+					}
+					return ret;
+				}
+			}
+			return false;
+		})(),
+
+		screenfull = {
+			isFullscreen: document[ fn.fullscreen ],
+			element: document[ fn.fullscreenElement ],
+
+			request: function( elem ) {
+				var request = fn.requestFullscreen;
+
+				elem = elem || document.documentElement;
+
+				// Work around Safari 5.1 bug: reports support for
+				// keyboard in fullscreen even though it doesn't.
+				// Browser sniffing, since the alternative with
+				// setTimeout is even worse
+				if ( /5\.1[\.\d]* Safari/.test( navigator.userAgent ) ) {
+					elem[ request ]();
+				} else {
+					elem[ request ]( keyboardAllowed && Element.ALLOW_KEYBOARD_INPUT );
+				}
+			},
+
+			exit: function() {
+				document[ fn.exitFullscreen ]();
+			},
+
+			toggle: function( elem ) {
+				if ( this.isFullscreen ) {
+					this.exit();
+				} else {
+					this.request( elem );
+				}
+			},
+
+			onchange: function() {},
+			onerror: function() {}
+		};
+
+	if ( !fn ) {
+		window.screenfull = null;
+		return;
+	}
+
+	document.addEventListener( fn.fullscreenchange, function( e ) {
+		screenfull.isFullscreen = document[ fn.fullscreen ];
+		screenfull.element = document[ fn.fullscreenElement ];
+		screenfull.onchange.call( screenfull, e );
+	});
+
+	document.addEventListener( fn.fullscreenerror, function( e ) {
+		screenfull.onerror.call( screenfull, e );
+	});
+
+	window.screenfull = screenfull;
+
+})( window, document );
+</script></head>
+    <body style="background: #ffffff;">
+        <div id="principal">
+            <span class="sombra" style="display:none" id="txtempresa"></span>
+            <span style="display:none" id="txtempresacon"></span>
+            <span style="display:none" id="txtempresaText"></span>
+            <!-- MENU -->
+            <div id="top-menu">
+                <!-- SECCION BIENVENIDA -->
+                <div id="top-menu-left-div-wrapper" style="">
+                    <a id="link_info_user" class="logoAdminfoMenu" href="#" onclick="abrirInfoUsuario()"><img src="/vsmart/imagenes//menu/logo-adminfo-smart.png"></a>
+                    <div id="modal_bv_info" style="display: none;"> </div>
+                </div>
+                <!-- FIN SECCION BIENVENIDA -->
+                <!-- MENU -->
+                <!-- Inicio Div Menu -->
+                <div class="nav ui-dialog-titlebar tituloPerfilUsuario" id="menuAdmon" style="display:block; padding-left:13px">
+                    <!-- Inicio UL Menu -->
+                    <ul id="navigation">
+                                                                                                            <li class="top-nav"> <!-- Inicio Li Menu -->
+                                    <a href="#" tabindex="1">
+                                        <span class="menu-mid"><p><span class="resaltado">Adminfo</span></p></span>
+                                    </a>
+                                                                        <ul class="sub"> <!-- Inicio UL SubMenu -->
+                                        <li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=comunes&amp;ctr=TareaCtr&amp;acc=listarTareasPreJur&amp;compromisos=true" tabindex="1">Hacer Gestión</a></li>                                    </ul><!-- FIN UL SubMenu -->
+                                                                    </li><!-- FIN Li Menu -->
+                                                            <li class="top-nav"> <!-- Inicio Li Menu -->
+                                    <a href="#" tabindex="2">
+                                        <span class="menu-mid"><p><span class="resaltado">Informes</span></p></span>
+                                    </a>
+                                                                        <ul class="sub"> <!-- Inicio UL SubMenu -->
+                                        <li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=informespagosagrupado" tabindex="2">Informe Pagos Agrupado</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=informetraslado" tabindex="3">Informe De Traslados</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=informesprejuridicos" tabindex="4">Informes Prejuridicos</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=inf_direcciones_smart" tabindex="5">Informe Direcciones</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=informesms" tabindex="6">Informes SMS</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=informesreversos" tabindex="7">Informe Reversos</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformeTrasladosContraPagosmejor&amp;acc=&amp;nom_programa=inf_trasladoscontrapagos" tabindex="8">Efectividad En Recaudo</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformeGestion&amp;acc=index" tabindex="9">Indicadores</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=infocompromi" tabindex="10">Informe De Compromisos</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=informeSeguimiento&amp;acc=&amp;nom_programa=informeseguimiento" tabindex="11">Resumen De Seguimiento</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformesControlador&amp;acc=&amp;nom_programa=informespagos" tabindex="12">Informe De Pagos</a></li>                                    </ul><!-- FIN UL SubMenu -->
+                                                                    </li><!-- FIN Li Menu -->
+                                                            <li class="top-nav"> <!-- Inicio Li Menu -->
+                                    <a href="#" tabindex="3">
+                                        <span class="menu-mid"><p><span class="resaltado">Informes Gráficos</span></p></span>
+                                    </a>
+                                                                        <ul class="sub"> <!-- Inicio UL SubMenu -->
+                                        <li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=GraficosGestionCtr&amp;acc=index" tabindex="13">Gráficos De Gestión</a></li><li><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=informes&amp;ctr=InformeGraficoAnalisisGestoresCtr&amp;acc=resumenMiGestion" tabindex="14">Informe Gráfico Análisis De Gestores</a></li>                                    </ul><!-- FIN UL SubMenu -->
+                                                                    </li><!-- FIN Li Menu -->
+                                                                        </ul><!-- FIN UL Menu -->
+                </div>
+                <!-- FIN MENU -->
+                <!-- OPCIONES MENU -->
+                <div class="top-menu-bar-right">
+
+                    <!-- Reloj -->
+                    <div class="top-menu-bar right"></div>
+                    <div class="top-menu-item right" tabindex="-1">
+                        <span id="divReloj" class="relieve" onclick="$(&quot;#calendario2&quot;).toggle(0)">11:31:10</span>
+                    </div>
+
+                    <!-- Cerrar sesión -->
+                    <div class="top-menu-bar right"></div>
+                    <div class="top-menu-item right" tabindex="-1">
+                        <a onclick="cerrarSesion()" href="#" tabindex="-1">
+                            <div class="cluetip iconCerrarSesion icon-menu" data-hasqtip="0" oldtitle="Salir de Adminfo" title=""></div>
+                        </a>
+                    </div>
+
+                    <!-- Cambiar empresa -->
+                    <div class="top-menu-bar right"></div>
+                    <div class="top-menu-item right" tabindex="-1">
+                        <a onclick="cerrarSesion()" href="#" tabindex="-1">
+                            <div class="cluetip iconoCerrarSesion icon-menu" data-hasqtip="1" oldtitle="Salir de Adminfo" title=""></div>
+                        </a>
+                    </div>
+
+                    <!-- Perfil -->
+                    <div class="top-menu-bar right"></div>
+                    <div class="top-menu-item right" tabindex="-1">
+                        <a href="#" tabindex="-1">
+                            </a><div class="cluetip iconoCambiarPerfil icon-menu"><a href="#" tabindex="-1">
+                                </a><div class="submenuInicio"><a href="#">
+
+                                    </a><a href="#" onclick="AbrirVentanaModal('https://alianzas.adminfoweb.net/vsmart/index.php?rtr=mantenimiento&amp;ctr=Autenticacion&amp;acc=cambioClave&amp;salir=N' , 0 ,0, true,'Cambiar Clave', '', true)">
+                                        <div id="opener" class="iconoCambiarPerfil iconoDesplegable" title="Cambiar de perfil"></div>
+                                    </a>
+
+                                    <a href="#" onclick="AbrirVentanaModal('https://alianzas.adminfoweb.net/vsmart/index.php?rtr=mantenimiento&amp;ctr=Autenticacion&amp;acc=cambioClave&amp;salir=N' , 0 ,0, true,'Cambiar Clave', '', true)">
+                                        <div class="iconoCambiarClave iconoDesplegable" title="Cambiar mi Clave"></div>
+                                    </a>
+
+                                    <a href="https://alianzas.adminfoweb.net/vsmart/index.php??rtr=mantenimiento&amp;ctr=cambioempresactr&amp;acc=">
+                                        <div class="iconoEmpresa iconoDesplegable" title="Cambiar de Empresa"></div>
+                                    </a>
+
+                                                                            <a href="#" onclick="AbrirVentanaModal('https://alianzas.adminfoweb.net/vsmart/index.php?rtr=mantenimiento&amp;ctr=Autenticacion&amp;acc=actualizarMarcacionTel' , 0 ,0, true,'Configuraci\xf3n Datos de Marcaci\xf3n', '', true)">
+                                            <div class="iconoMarcacionTelefonica iconoDesplegable" title="Marcación Telefónica"></div>
+                                        </a>
+                                
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                    <!-- Notificaciones -->
+                    <link href="https://alianzas.adminfoweb.net/vsmart/css/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+<div class="top-menu-bar right"></div>
+<div class="top-menu-item right" tabindex="-1">
+    <a id="linknotificacionfrontend" href="#" onclick="abrirNotificacionesAjax()" tabindex="-1">
+        <div id="notificacionfrontend" class="cluetip iconoNotificaciones icon-menu" data-hasqtip="3" oldtitle="click aqui para ver notificaciones del sistema" title="">   
+                </div>
+    </a>
+</div>  
+
+<script>
+/**
+ * Carga la lista de notificacion usando ajax
+ */
+function abrirNotificacionesAjax()
+{
+	jQuery('#linknotificacionfrontend').off('click');	
+	$.ajax({
+		type: "POST",
+		url: "?rtr=comunes&ctr=AlertasCtr&acc=getNotificacionesUsuario",
+		dataType: 'json',			
+		success: function(msg){ //Funcion que se ejecuta cuando recibe una respuesta del servidor
+			if(msg != undefined && msg.length > 0) {
+				$.each(msg, function( index, objNoti ) {
+					var strFlag ='';					
+					if(objNoti.fueVisto === 1 ) {
+						strFlag ='<i class=\"fa fa-bullhorn\"></i> ';						
+					}					
+					widgetNoty(strFlag+' '+objNoti.texto,'information','topRight',false);				
+				});	
+				actualizarNotificacionesVistas();
+				jQuery('#linknotificacionfrontend').on('click','abrirNotificacionesAjax');	
+			} else {
+				widgetNoty(_('no tiene notificaciones en el momento'),'Warning','topCenter',1000);
+			}									
+			mensajeModal('');						
+		},
+		beforeSend: function(){ //Funcion que se ejecuta cuando se envian los datos al servidor				
+			mensajeModal(_('cargando')+' ...');
+		},
+		error: function(){ //Funcion que se ejecuta si ocurre un error en el AJAX
+		}
+	});
+}
+var arrRelaUsuario = [];
+/**
+ * Despliega la lista de notificaciones
+ */
+function abrirNotificaciones(){
+	debugger;
+	jQuery('#linknotificacionfrontend').off('click');
+	actualizarNotificacionesVistas();
+		jQuery('#linknotificacionfrontend').on('click','abrirNotificaciones');	
+}
+/**
+ * Actualiza la lista de notificaciones a vistas por el usuario
+ */
+function actualizarNotificacionesVistas()
+{
+	jQuery("#notificacionfrontend").removeClass('fa-spin');
+	jQuery("#notificacionfrontend").removeClass('fa-bell-o');
+	jQuery("#notificacionfrontend").addClass('fa-bell');
+	$('#cantNoti').remove();
+	var notixusAct = [];
+	$.each(arrRelaUsuario, function( index, arrRel ) {		
+		notixusAct.push(arrRel['relacion']);		
+	});
+		
+	if (notixusAct.length > 0) {	
+    	$.ajax({
+    		type: "POST",
+    		url: "?rtr=comunes&ctr=AlertasCtr&acc=actualizarNotificacionesUsuario",
+    		data: {'relUsuario':notixusAct},		
+    		success: function(msg){ //Funcion que se ejecuta cuando recibe una respuesta del servidor						
+    			mensajeModal('');						
+    		},
+    		beforeSend: function(){ //Funcion que se ejecuta cuando se envian los datos al servidor				
+    			mensajeModal('');
+    		},
+    		error: function(){ //Funcion que se ejecuta si ocurre un error en el AJAX
+    		}
+    	});
+	}
+}
+ </script>
+<link href="https://alianzas.adminfoweb.net/vsmart/css/buttons.css" rel="stylesheet" type="text/css">
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/jquery.noty.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/top.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/top.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/topLeft.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/topCenter.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/topRight.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/center.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/centerLeft.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/centerRight.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/bottom.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/bottomLeft.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/bottomCenter.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/layouts/bottomRight.js?5f5a54c460dbf'); </script>
+<script type="text/javascript"> require_once('https://alianzas.adminfoweb.net/vsmart/js/noty/themes/default.js?5f5a54c460dbf'); </script>
+<script>
+var tipoGlobal = 'information';
+var posicionGlobal = 'top';
+var timeoutGlobal = 3000;
+var dismissQueueGlobal = true;
+var botoneraGlobal = false;
+var modalGlobal = false;
+var closeWithGlobal = 'button';
+$( document ).ready(function() {
+});
+function widgetNoty(mensaje,tipo,posicion,timeout,dismissQueue,modal,botonera,closeWith,callback) {
+	
+	if(typeof tipo === 'undefined'){
+		tipo =  tipoGlobal;
+	};
+	if(typeof posicion === 'undefined'){
+		posicion =  posicionGlobal;
+	};
+	if(typeof timeout === 'undefined'){
+		timeout =  timeoutGlobal;
+	};
+	if(typeof dismissQueue === 'undefined'){
+		dismissQueue =  dismissQueueGlobal;
+	};
+	if(typeof botonera === 'undefined'){
+		botonera =  false;
+	};
+	if(typeof modal === 'undefined'){
+		modal =  modalGlobal;
+	};	
+	if(typeof closeWith === 'undefined' || closeWith === ''){
+		closeWith =  closeWithGlobal;
+	};
+	if ($.isArray(closeWith) == false) {
+		closeWith = [closeWith];
+	}  
+	if(typeof callback === 'undefined' ){	
+		callback = {	onShow: function() {},
+	        			afterShow: function() {},
+	        			onClose: function() {},
+	        			afterClose: function() {},
+	        			onCloseClick: function() {},
+					}
+	}
+	
+	var n = noty({
+        layout: posicion,
+        text: mensaje,
+        type: tipo,
+        dismissQueue: dismissQueue,
+        modal: modal,
+        timeout: timeout,
+        buttons:botonera,
+        closeWith: closeWith,
+        callback: callback 
+    }); 
+}
+</script>
+
+                    <!-- Home/inicio -->
+                    <div class="top-menu-bar right"></div>
+                    <div class="top-menu-item right" tabindex="-1">
+                        <a href="#" tabindex="-1">
+                            </a><div class="cluetip iconoInicio icon-menu"><a href="#" tabindex="-1">
+                                </a><div class="submenuInicio"><a href="#">
+
+                                    </a><a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=mantenimiento&amp;ctr=inicio">
+                                        <div class="iconoInicioDesplegable" title="Ir al inicio"></div>
+                                    </a>
+                                                                        <a href="https://alianzas.adminfoweb.net/vsmart/index.php?rtr=mantenimiento&amp;ctr=administracionbd&amp;acc=consultar">
+                                        <div class="iconoCambiarModulo iconoDesplegable" title="Cambiar al módulo de mantenimento"></div>
+                                    </a>
+                                                                    </div>
+                            </div>
+                        
+                    </div>
+
+                    <div class="top-menu-bar right"></div>
+                </div>
+                <div class="clear"></div>
+                <!-- FIN OPCIONES MENU -->
+            </div>
+            <div id="calendario2" style="z-index: 9999; position: relative; float: right; margin-top: 37px;display: none" class="hasDatepicker"><div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" onclick="DP_jQuery_1599755469090.datepicker._adjustDate('#calendario2', -1, 'M');" title="Anterior"><span class="ui-icon ui-icon-circle-triangle-w">Anterior</span></a><a class="ui-datepicker-next ui-corner-all" onclick="DP_jQuery_1599755469090.datepicker._adjustDate('#calendario2', +1, 'M');" title="Siguiente"><span class="ui-icon ui-icon-circle-triangle-e">Siguiente</span></a><div class="ui-datepicker-title"><select class="ui-datepicker-month" onchange="DP_jQuery_1599755469090.datepicker._selectMonthYear('#calendario2', this, 'M');" onclick="DP_jQuery_1599755469090.datepicker._clickMonthYear('#calendario2');"><option value="0">Enero</option><option value="1">Febrero</option><option value="2">Marzo</option><option value="3">Abril</option><option value="4">Mayo</option><option value="5">Junio</option><option value="6">Julio</option><option value="7">Agosto</option><option value="8" selected="selected">Septiembre</option><option value="9">Octubre</option><option value="10">Noviembre</option><option value="11">Diciembre</option></select><select class="ui-datepicker-year" onchange="DP_jQuery_1599755469090.datepicker._selectMonthYear('#calendario2', this, 'Y');" onclick="DP_jQuery_1599755469090.datepicker._clickMonthYear('#calendario2');"><option value="2010">2010</option><option value="2011">2011</option><option value="2012">2012</option><option value="2013">2013</option><option value="2014">2014</option><option value="2015">2015</option><option value="2016">2016</option><option value="2017">2017</option><option value="2018">2018</option><option value="2019">2019</option><option value="2020" selected="selected">2020</option><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option><option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option></select></div></div><table class="ui-datepicker-calendar"><thead><tr><th class="ui-datepicker-week-end"><span title="Domingo">Do</span></th><th><span title="Lunes">Lu</span></th><th><span title="Martes">Ma</span></th><th><span title="Miércoles">Mi</span></th><th><span title="Jueves">Ju</span></th><th><span title="Viernes">Vi</span></th><th class="ui-datepicker-week-end"><span title="Sábado">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">1</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">2</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">3</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">4</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">5</a></td></tr><tr><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">6</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">7</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">8</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">9</a></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">10</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">11</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">12</a></td></tr><tr><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">13</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">14</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">15</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">16</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">17</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">18</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">19</a></td></tr><tr><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">20</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">21</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">22</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">23</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">24</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">25</a></td><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">26</a></td></tr><tr><td class=" ui-datepicker-week-end " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">27</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">28</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">29</a></td><td class=" " onclick="DP_jQuery_1599755469090.datepicker._selectDay('#calendario2',8,2020, this);return false;"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></div>
+        </div>
+        <div id="container" class="ui-layout-container" style="overflow: hidden;">
+            <div class="ui-layout-center ui-layout-pane ui-layout-pane-center" style="position: absolute; margin: 0px; left: 0px; right: 0px; top: 0px; bottom: 0px; height: 563px; width: 1344px; z-index: 0; display: block; visibility: visible;">
+                <div id="contenedor">
+                    <div id="contenedor-header">
+                            <!--  <img src="https://alianzas.adminfoweb.net/vsmart/imagenes/16x16/head-icon-1.png" align="absmiddle" style="margin-bottom:1px;margin-right:5px"/>-->
+                            <!--  <span style="position: absolute;right: 15px" id="contenedor-header-buttons"><img onclick="limpiar_div()" style="cursor:pointer;" src="imagenes/16x16/dialog-buttons.png" /></span>-->
+                    </div>
+                    <div class="hor-bar"></div>
+                    <div id="contenedor-text">
+                            <style>
+        .widgets-gestion {
+            margin-right: 25px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            width: 450px;
+            height: 230px;            
+            display: table-cell;
+        }
+
+        div.contenedorGraficas {
+            margin-left: auto !important;
+            margin-right: auto !important;
+            height: 800px;
+        }        
+        
+        .divContenGraphic:nth-child(3) {
+            float: right;
+        }
+        
+        .divContenGraphic:nth-child(2) {
+            float: left;
+        }
+        
+    </style>
+    
+    <div id="tabsGraficas" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#contenido1"><span>Gestiones</span></a></li>
+            <li class="ui-state-default ui-corner-top"><a href="#contenido2"><span>Clientes Gestionados</span></a></li>
+        </ul>
+        <div id="contenido1" class="ui-tabs-panel ui-widget-content ui-corner-bottom contenedorGraficas">
+            <h1 align="center">GESTIONES</h1>
+            <div class="divContenGraphic" id="widget_adminfo_1"> </div>
+            <div class="divContenGraphic" id="widget_adminfo_2"> </div>
+        </div>
+        <div id="contenido2" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide contenedorGraficas">
+            <h1 align="center">CLIENTES GESTIONADOS</h1>
+            <div class="divContenGraphic" id="widget_adminfo_3"> </div>
+            <div class="divContenGraphic" id="widget_adminfo_4"> </div>
+        </div>        
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#tabsGraficas").tabs({
+                load: function (event, ui) {
+                    $('a', ui.panel).click(function () {
+                        $(ui.panel).load(this.href);
+                        return false;
+                    });
+                }
+            }, "cache", true);
+
+            $("#tabsAlarmComproCoordi").tabs({
+                load: function (event, ui) {
+                    $('a', ui.panel).click(function () {
+                        $(ui.panel).load(this.href);
+                        return false;
+                    });
+                }
+            }, "cache", true);
+
+            $(function () {
+                cargarWidget('gestionMensual', 'widget_adminfo_1', 1);
+                cargarWidget('metricaMes', 'widget_adminfo_2', 1, 600);
+
+                cargarWidget('gestionMensual', 'widget_adminfo_3', 2);
+                cargarWidget('metricaMes', 'widget_adminfo_4', 2, 600);
+                });
+        });
+    </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CAMBIAR DE PERFIL -->
+        
+        
+        <div id="divVentanaDirec"></div>
+        <div id="panel-oculto" style=""></div>
+        <div id="divJs"></div>
+                <div id="barraTelefono"> </div>
+        <div id="panel-phone" style="border:none; border-spacing:0; border-collapse:collapse; display:none;">
+                <table>
+                    <tbody><tr>
+                        <td>
+                        <div style="float: left;">
+                        </div>
+                        <div style="float: right;">
+
+                        <button type="submit" id="muteBtn" style="border: 0; background: transparent" title="Mute">
+                        <img class="img-swap" id="muteBtnimg" src="/vsmart/imagenes/32x32/mic_on.png" width="24" height="24" alt="Mute">
+                        </button>
+                        <button type="submit" id="colgarBtn" style="border: 0; background: transparent" title="Terminar Llamada">
+                        <img src="/vsmart/imagenes/32x32/huphone.png" width="24" height="24">
+                        </button>
+                        <button type="submit" id="ocultarBtn" style="border: 0; background: transparent" title="Ocultar...">
+                        	<img src="/vsmart/imagenes/32x32/doubleup.png" width="12" height="12" alt="Ocultar">
+                        	</button>
+                        </div>
+                        </td>
+                    </tr>
+                </tbody></table>
+    </div>
+          
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $('#container').layout();
+                $("#dialog").dialog({
+                    autoOpen: false,
+                    width: 510,
+                                                height: 410,
+                                        position: "center",
+                    modal: true,
+                    resizable: false,
+                    closeOnEscape: false
+                                    });
+
+            var i = 0;
+
+            $(".tablaPerfil > tbody > tr.jqgrow").each(function () {
+                if(i == 0) {
+                    $(this).attr('id', 'primerFocus');
+                }
+                $(this).attr('tabindex', i + 1);
+                i++;
+            });
+
+            $(".botonCambiarEmpresa").attr('tabindex', i + 1);
+            $(".botonSalirAdminfo").attr('tabindex', i + 2);
+
+            $('#ultimoFocus').keydown(function (e) {
+                if (e.which === 9) {
+                    //$('#primerFocus').focus();
+                    $("tr.jqgrow")[0].focus();
+                }
+             });
+
+
+                $('.cluetip').qtip({
+                	position: {
+                		my: 'top right',
+                	    at: 'bottom left'
+                	},
+                	style: {
+                	   tip: true,
+                	   classes: 'qtip-default qtip qtip-dark qtip-shadow'
+                    }
+                });
+
+                            });
+
+            function abrirInfoUsuario() {
+                var mouseoverinfo = false;
+                $('#modal_bv_info').load('index.php?rtr=mantenimiento&ctr=Administracionbd&acc=vistaInfoUsuario');
+
+                $('#modal_bv_info').modal({
+                    modal: false,
+                    position: [40,5],
+                    opacity: 80,
+                    focus: true,
+                    onShow: function() {
+                        setTimeout(function () {
+                            if (!mouseoverinfo) $.modal.close();
+                        }, 4000);
+                    },
+                });
+
+                $('#modal_bv_info').hover(function(){
+                    mouseoverinfo = true;
+                }, function() {
+                    setTimeout(function () {
+                        $.modal.close();
+                    }, 1000);
+                });
+            }
+            function abrirBarraTel() {
+                if(localStorage.getItem("idCall")==null){
+
+                    $('#muteBtn').prop('disabled',true).addClass('disabledBoton');
+                    $('#colgarBtn').prop('disabled',true).addClass('disabledBoton');
+                }
+                else{
+
+                    $('#muteBtn').prop('disabled',false).removeClass('disabledBoton');
+                    $('#colgarBtn').prop('disabled',false).removeClass('disabledBoton');
+                }
+
+                $('#panel-phone').slideDown();
+            }
+            $('#ocultarBtn').click(function(){
+                $('#panel-phone').slideUp();
+            });
+
+            $('.tablaPerfil > tbody > tr.jqgrow').keydown(function (e) {
+                 if (e.which === 13) {
+                    var ruta = $(this).find( 'td > a' ).attr('href');
+                    var rutaLimpia = ruta.replace("?","");
+                    var url = "https://alianzas.adminfoweb.net/vsmart/index.php?" + rutaLimpia;
+                    window.location = url;
+                    return false;
+                 }
+             });
+
+            var i = 1;
+
+            $("#navigation > li.top-nav > a").each(function () {
+                $(this).attr('tabindex', i);
+                i++;
+            });
+
+            var i = 21;
+
+            $('ul.sub').focus(function() {
+                $("ul.sub > li > a").each(function () {
+                    /*if(i == 0) {
+                        $(this).attr('id', 'primerFocus');
+                    }*/
+                    $(this).attr('tabindex', i);
+                    i++;
+                });
+            });
+
+            $("#navigation > li > a").keydown(function (e) {
+                 if (e.which === 13) {
+                    $(this).siblings('ul.sub').attr('style', 'display: block !important;');
+                    //$('ul.sub > li:nth-child(1) > a').focus();
+                    //$('ul.sub > li:last-child > a').attr('class', 'ultimoFocus');
+                 }
+             });
+
+            $('ul.sub > li:last-child').keydown(function (e) {
+                if (e.which === 9) {
+                    $(this).parent().attr('style', 'display: none;');
+                }
+             });
+
+            $('ul.sub > li').keydown(function (e) {
+                if (e.which === 27) {
+                    $(this).parent().attr('style', 'display: none;');
+                }
+             });
+
+            $('#navigation > li.top-nav').keydown(function (e) {
+                if (e.which === 13) {
+                    $(this).children('ul.sub').attr('style', 'display: block !important;');
+                    //$(this).focus();
+                }
+             });
+
+            $('#navigation > li.top-nav > a').keydown(function (e) {
+                if (e.which === 13) {
+                    $(this).children('ul.sub').attr('style', 'display: block !important;');
+                    //$(this).focus();
+                }
+             });
+
+            $('#navigation > li.top-nav > ul.sub > li').keydown(function (e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+             });
+
+            $('#navigation > li.top-nav > ul.sub > li > a').keydown(function (e) {
+                if (e.which === 13) {
+                    $(this).click();
+                }
+             });
+
+            /*** Desabilitar tab en menu superior derecho (cambair perfil, cerrar sesion, etc) ****/
+
+            $('.top-menu-bar-right > .top-menu-item').each(function () {
+                $(this).attr('tabindex', -1);
+            });
+
+            $('.top-menu-bar-right > .top-menu-item > a').each(function () {
+                $(this).attr('tabindex', -1);
+            });
+
+            $('.top-menu-bar-right > .top-menu-item >  .submenuInicio > a').attr('tabindex', -1);
+            $('.top-menu-bar-right > .top-menu-item >  .iconoInicio > a').attr('tabindex', -1);
+            $('.top-menu-bar-right > .top-menu-item >  .iconoCambiarPerfil> a').attr('tabindex', -1);
+
+            /*** Fin desabilitar tab en menu superior derecho (cambair perfil, cerrar sesion, etc) ****/
+
+        </script>
+        <script type="text/javascript" src="https://alianzas.adminfoweb.net/vsmart/js/plantilla.js"></script>
+    
+
+<div id="__messageQueue__container" class="messageContainer"></div><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog" style="display: none; z-index: 1000; outline: 0px;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-dialog">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="dialog" class="contenedorPerfil ui-dialog-content ui-widget-content" style="z-index: 2000000; width: 100%; height: 360px !important;">
+            <div style="floar:left; height: 47px; width: 120px; display: inline-block;">
+                <img class="logoEmpresaPerfil" src="/vsmart/imagenes/logos/solati.png">
+
+            </div>
+            <div style="display: inline block; float: right; width: 200px;">
+                 <p class="tituloSeleccionarPerfil">Seleccionar Perfil</p>
+                <img class="logoAdminfoPerfil" src="/vsmart/imagenes//logos/logo-adminfo-color.png" alt="logo-adminfo-smart">
+            </div>
+            <table id="table_rol" style="width:490px;border-spacing:0;border-collapse:collapse;border:none; font-size: 12px;">
+                <tbody>
+                    <tr>
+                        <td style="width:70px" rowspan="5"><img src="/vsmart/imagenes//64x64/perfil.jpg" <="" td="">
+                    </td></tr>
+                    <tr>
+                        <td style="width:100px">Usuario</td>
+                        <td>dfdiaz</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>David Fernando Díaz Suárez</td>
+                    </tr>
+                    <tr>
+                        <td>Identificación</td>
+                        <td>14399033</td>
+                    </tr>
+                    <tr>
+                        <td>Empresa</td>
+                        <td>Alianzas</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <table id="table_rol" class="tablaPerfilUsuario" style="width:490px; border:none; border-spacing:0; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 2px 4px; text-align:center; width:50px"><p>Grupo</p></th>
+                        <th style="padding: 2px 4px; text-align:left"> Perfil</th>
+                    </tr>
+                </thead>
+            </table>
+            <div style="width:488px;margin:0px;padding:0px;height:200px;overflow:scroll;border:1px solid #c6c5c5;">
+                <table class="tablaPerfil" style="width:100%;border:none; border-spacing:0; border-collapse:collapse;">
+                                <tbody><tr class="filaMargen"></tr>
+
+                                    <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" id="primerFocus" tabindex="1">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=1">1</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=1">Asesor</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="2">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=2">2</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=2">Administrador</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="3">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=3">3</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=3">Coordinador</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="4">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=4">4</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=4">Caja</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="5">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=5">5</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=5">Descuento</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="6">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=6">6</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=6">Coordinador Alianzas</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="7">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=7">7</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=7">Administrador Cobro Juridico</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="8">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=8">8</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=8">Abogado</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="9">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=9">9</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=9">Asesores Hym</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="10">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=10">10</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=10">Administrador Hym</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="11">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=11">11</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=11">Coordinador Hym</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="12">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=12">12</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=12">Franja 1-9</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="13">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=13">13</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=13">Franja 10-30</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="14">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=14">14</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=14">Franja 31-60</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="15">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=15">15</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=15">Franja 61-90</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="16">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=16">16</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=16">Franja 91-120</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                            <tr style="cursor:pointer" class="ui-widget-content jqgrow ui-row-ltr" tabindex="17">
+                        <td style="width:50px; padding: 4px; text-align:center; cursor:pointer;border-color: #ffffff;">
+                                                            <a style="display:block;width:100%;text-decoration:none;border-color: #ffffff;" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=17">17</a>
+                                                    </td>
+                        <td style="padding: 4px; cursor:pointer;"><a style="display:block;width:100%;text-decoration:none" href="?rtr=mantenimiento&amp;ctr=inicio&amp;consgrupo=17">Franja Prejuridica</a></td>
+                                            </tr>
+                    <tr class="filaMargen"></tr>
+                                        </tbody></table>
+            </div>
+        </div></div><div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-divVentanaModal" style="display: none; z-index: 1000; outline: 0px; position: absolute;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-divVentanaModal">Administracion Base de Datos</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="divVentanaModal" class="ui-dialog-content ui-widget-content"></div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div></div></body></html>
