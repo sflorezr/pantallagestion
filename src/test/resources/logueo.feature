@@ -8,5 +8,7 @@
       Cuando digito usuario "dfdiaz" y clave "Dfd14z1027.*"
       Y presiono el boton de logueo
       Entonces valido inicio de sesion
-      Cuando ingresa al modulo de informes con grupo "11"
+      ## 15888 es software.consecutivo del usuario y bd con la que haremos la prueba par
+      Y Selecciona base de datos "15888"
+      Cuando ingresa al modulo de informes con grupo "1"
       Y me dirijo al informe con nomprograma: "informesprejuridicos"

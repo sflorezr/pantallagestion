@@ -40,7 +40,10 @@ public class logueoDefinition {
     public void valido_inicio_de_sesion() throws Exception {
         // aqui debo crear el metodo para validar
     }
-
+    @Entonces("^Selecciona base de datos \"([^\"]*)\"$")
+    public void selecciona_basededatos(String nomBase) {
+        pasos.irAEmpresa(nomBase);
+    }
     @Cuando("^me dirijo al informe con nomprograma: \"([^\"]*)\"$")
     public void me_dirijo_al_informe_con_nomprograma(String nomprograma) throws Exception {
       //  pasos.iraInforme(nomprograma);

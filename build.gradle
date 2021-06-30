@@ -38,6 +38,7 @@ dependencies {
     compile group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '2.0.39'
     testCompile 'org.assertj:assertj-core:3.9.1'
     compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    testImplementation group: 'org.testng', name: 'testng', version: '6.8'
     testCompile 'org.slf4j:slf4j-simple:1.7.7'
     runtime fileTree(dir:'lib',include:'*.jar')
 
